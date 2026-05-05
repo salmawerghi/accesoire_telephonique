@@ -1,0 +1,21 @@
+{
+  "recommendations": [
+    "vscjava.vscode-java-pack",
+    "redhat.java",
+    "vscjava.vscode-maven",
+    "vscjava.vscode-spring-boot",
+    "ms-vscode.vscode-typescript-next",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "ms-azuretools.vscode-docker",
+    "ms-vscode.remote-repositories",
+    "GitHub.github-vscode-theme",
+    "GitHub.copilot",
+    "GitLab.gitlab-workflow",
+    "eamodio.gitlens",
+    "GitHub.vscode-pull-request-github",
+    "ms-vscode-remote.remote-ssh",
+    "posit.r",
+    "ms-python.python"
+  ]
+}

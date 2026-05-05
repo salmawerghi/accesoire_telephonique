@@ -1,0 +1,514 @@
+﻿[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------< com.phoneaccessoires:phone-accessories-backend >-----------
+[INFO] Building Phone Accessories Backend 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> spring-boot:3.2.0:run (default-cli) > test-compile @ phone-accessories-backend >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ phone-accessories-backend ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ phone-accessories-backend ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ phone-accessories-backend ---
+[INFO] skip non existing resourceDirectory C:\Users\user\Desktop\projet_wahid - Copie\projet_wahid - Copie\backend\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ phone-accessories-backend ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] <<< spring-boot:3.2.0:run (default-cli) < test-compile @ phone-accessories-backend <<<
+[INFO] 
+[INFO] 
+[INFO] --- spring-boot:3.2.0:run (default-cli) @ phone-accessories-backend ---
+[INFO] Attaching agents: []
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.0)
+
+2026-04-07T20:27:49.602+01:00  INFO 5712 --- [           main] c.p.PhoneAccessoiresApplication          : Starting PhoneAccessoiresApplication using Java 17.0.18 with PID 5712 (C:\Users\user\Desktop\projet_wahid - Copie\projet_wahid - Copie\backend\target\classes started by user in C:\Users\user\Desktop\projet_wahid - Copie\projet_wahid - Copie\backend)
+2026-04-07T20:27:49.603+01:00 DEBUG 5712 --- [           main] c.p.PhoneAccessoiresApplication          : Running with Spring Boot v3.2.0, Spring v6.1.1
+2026-04-07T20:27:49.603+01:00  INFO 5712 --- [           main] c.p.PhoneAccessoiresApplication          : No active profile set, falling back to 1 default profile: "default"
+2026-04-07T20:27:49.980+01:00  INFO 5712 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-04-07T20:27:50.021+01:00  INFO 5712 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 36 ms. Found 3 JPA repository interfaces.
+2026-04-07T20:27:50.347+01:00  INFO 5712 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2026-04-07T20:27:50.353+01:00  INFO 5712 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-07T20:27:50.355+01:00  INFO 5712 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2026-04-07T20:27:50.391+01:00  INFO 5712 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-04-07T20:27:50.392+01:00  INFO 5712 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 760 ms
+2026-04-07T20:27:50.481+01:00  INFO 5712 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-04-07T20:27:50.513+01:00  INFO 5712 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.3.1.Final
+2026-04-07T20:27:50.535+01:00  INFO 5712 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-04-07T20:27:50.665+01:00  INFO 5712 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-04-07T20:27:50.680+01:00  INFO 5712 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-04-07T20:27:50.813+01:00  INFO 5712 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1304e0d7
+2026-04-07T20:27:50.815+01:00  INFO 5712 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-04-07T20:27:50.843+01:00  WARN 5712 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-04-07T20:27:51.466+01:00  INFO 5712 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-04-07T20:27:51.522+01:00  INFO 5712 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-04-07T20:27:51.768+01:00  INFO 5712 --- [           main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-04-07T20:27:52.119+01:00  WARN 5712 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-07T20:27:52.362+01:00  INFO 5712 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path ''
+2026-04-07T20:27:52.367+01:00  INFO 5712 --- [           main] c.p.PhoneAccessoiresApplication          : Started PhoneAccessoiresApplication in 2.992 seconds (process running for 3.185)
+2026-04-07T20:27:52.408+01:00 DEBUG 5712 --- [           main] org.hibernate.SQL                        : 
+    select
+        count(*) 
+    from
+        categories c1_0
+Hibernate: 
+    select
+        count(*) 
+    from
+        categories c1_0
+2026-04-07T20:27:52.412+01:00  INFO 5712 --- [           main] c.p.config.DataInitializer               : Initialisation de la base de donn�es avec les donn�es de test...
+2026-04-07T20:27:52.445+01:00 DEBUG 5712 --- [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        categories
+        (created_at, description, nom) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        categories
+        (created_at, description, nom) 
+    values
+        (?, ?, ?)
+2026-04-07T20:27:52.456+01:00 DEBUG 5712 --- [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        categories
+        (created_at, description, nom) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        categories
+        (created_at, description, nom) 
+    values
+        (?, ?, ?)
+2026-04-07T20:27:52.457+01:00 DEBUG 5712 --- [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        categories
+        (created_at, description, nom) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        categories
+        (created_at, description, nom) 
+    values
+        (?, ?, ?)
+2026-04-07T20:27:52.458+01:00 DEBUG 5712 --- [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        categories
+        (created_at, description, nom) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        categories
+        (created_at, description, nom) 
+    values
+        (?, ?, ?)
+2026-04-07T20:27:52.459+01:00 DEBUG 5712 --- [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        categories
+        (created_at, description, nom) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        categories
+        (created_at, description, nom) 
+    values
+        (?, ?, ?)
+2026-04-07T20:27:52.460+01:00  INFO 5712 --- [           main] c.p.config.DataInitializer               : 5 cat�gories cr��es avec succ�s.
+2026-04-07T20:27:52.463+01:00 DEBUG 5712 --- [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        marques
+        (created_at, logo_url, nom, pays_origine) 
+    values
+        (?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        marques
+        (created_at, logo_url, nom, pays_origine) 
+    values
+        (?, ?, ?, ?)
+2026-04-07T20:27:52.465+01:00 DEBUG 5712 --- [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        marques
+        (created_at, logo_url, nom, pays_origine) 
+    values
+        (?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        marques
+        (created_at, logo_url, nom, pays_origine) 
+    values
+        (?, ?, ?, ?)
+2026-04-07T20:27:52.465+01:00 DEBUG 5712 --- [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        marques
+        (created_at, logo_url, nom, pays_origine) 
+    values
+        (?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        marques
+        (created_at, logo_url, nom, pays_origine) 
+    values
+        (?, ?, ?, ?)
+2026-04-07T20:27:52.466+01:00 DEBUG 5712 --- [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        marques
+        (created_at, logo_url, nom, pays_origine) 
+    values
+        (?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        marques
+        (created_at, logo_url, nom, pays_origine) 
+    values
+        (?, ?, ?, ?)
+2026-04-07T20:27:52.468+01:00 DEBUG 5712 --- [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        marques
+        (created_at, logo_url, nom, pays_origine) 
+    values
+        (?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        marques
+        (created_at, logo_url, nom, pays_origine) 
+    values
+        (?, ?, ?, ?)
+2026-04-07T20:27:52.468+01:00  INFO 5712 --- [           main] c.p.config.DataInitializer               : 5 marques cr��es avec succ�s.
+2026-04-07T20:27:52.472+01:00 DEBUG 5712 --- [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        accessoires
+        (categorie_id, created_at, description, image_url, marque_id, nom, prix, reference, stock, updated_at) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        accessoires
+        (categorie_id, created_at, description, image_url, marque_id, nom, prix, reference, stock, updated_at) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2026-04-07T20:27:52.477+01:00 DEBUG 5712 --- [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        accessoires
+        (categorie_id, created_at, description, image_url, marque_id, nom, prix, reference, stock, updated_at) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        accessoires
+        (categorie_id, created_at, description, image_url, marque_id, nom, prix, reference, stock, updated_at) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2026-04-07T20:27:52.479+01:00 DEBUG 5712 --- [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        accessoires
+        (categorie_id, created_at, description, image_url, marque_id, nom, prix, reference, stock, updated_at) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        accessoires
+        (categorie_id, created_at, description, image_url, marque_id, nom, prix, reference, stock, updated_at) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2026-04-07T20:27:52.480+01:00 DEBUG 5712 --- [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        accessoires
+        (categorie_id, created_at, description, image_url, marque_id, nom, prix, reference, stock, updated_at) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        accessoires
+        (categorie_id, created_at, description, image_url, marque_id, nom, prix, reference, stock, updated_at) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2026-04-07T20:27:52.482+01:00 DEBUG 5712 --- [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        accessoires
+        (categorie_id, created_at, description, image_url, marque_id, nom, prix, reference, stock, updated_at) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        accessoires
+        (categorie_id, created_at, description, image_url, marque_id, nom, prix, reference, stock, updated_at) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2026-04-07T20:27:52.483+01:00 DEBUG 5712 --- [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        accessoires
+        (categorie_id, created_at, description, image_url, marque_id, nom, prix, reference, stock, updated_at) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        accessoires
+        (categorie_id, created_at, description, image_url, marque_id, nom, prix, reference, stock, updated_at) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2026-04-07T20:27:52.484+01:00 DEBUG 5712 --- [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        accessoires
+        (categorie_id, created_at, description, image_url, marque_id, nom, prix, reference, stock, updated_at) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        accessoires
+        (categorie_id, created_at, description, image_url, marque_id, nom, prix, reference, stock, updated_at) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2026-04-07T20:27:52.486+01:00 DEBUG 5712 --- [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        accessoires
+        (categorie_id, created_at, description, image_url, marque_id, nom, prix, reference, stock, updated_at) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        accessoires
+        (categorie_id, created_at, description, image_url, marque_id, nom, prix, reference, stock, updated_at) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2026-04-07T20:27:52.487+01:00 DEBUG 5712 --- [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        accessoires
+        (categorie_id, created_at, description, image_url, marque_id, nom, prix, reference, stock, updated_at) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        accessoires
+        (categorie_id, created_at, description, image_url, marque_id, nom, prix, reference, stock, updated_at) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2026-04-07T20:27:52.488+01:00 DEBUG 5712 --- [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        accessoires
+        (categorie_id, created_at, description, image_url, marque_id, nom, prix, reference, stock, updated_at) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        accessoires
+        (categorie_id, created_at, description, image_url, marque_id, nom, prix, reference, stock, updated_at) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2026-04-07T20:27:52.490+01:00  INFO 5712 --- [           main] c.p.config.DataInitializer               : 10 accessoires cr��s avec succ�s.
+2026-04-07T20:27:52.490+01:00  INFO 5712 --- [           main] c.p.config.DataInitializer               : === Initialisation de la base de donn�es termin�e ===
+2026-04-07T20:29:18.435+01:00  INFO 5712 --- [nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-07T20:29:18.436+01:00  INFO 5712 --- [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-04-07T20:29:18.436+01:00  INFO 5712 --- [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2026-04-07T20:29:18.453+01:00  INFO 5712 --- [nio-8081-exec-1] c.p.controller.CategorieController       : GET /api/categories - R�cup�ration toutes les cat�gories
+2026-04-07T20:29:18.454+01:00 DEBUG 5712 --- [nio-8081-exec-1] c.p.service.CategorieServiceImpl         : R�cup�ration de toutes les cat�gories
+2026-04-07T20:29:18.467+01:00 DEBUG 5712 --- [nio-8081-exec-1] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.created_at,
+        c1_0.description,
+        c1_0.nom 
+    from
+        categories c1_0
+Hibernate: 
+    select
+        c1_0.id,
+        c1_0.created_at,
+        c1_0.description,
+        c1_0.nom 
+    from
+        categories c1_0
+2026-04-07T20:29:18.539+01:00 DEBUG 5712 --- [nio-8081-exec-1] org.hibernate.SQL                        : 
+    select
+        a1_0.categorie_id,
+        a1_0.id,
+        a1_0.created_at,
+        a1_0.description,
+        a1_0.image_url,
+        a1_0.marque_id,
+        a1_0.nom,
+        a1_0.prix,
+        a1_0.reference,
+        a1_0.stock,
+        a1_0.updated_at 
+    from
+        accessoires a1_0 
+    where
+        a1_0.categorie_id=?
+Hibernate: 
+    select
+        a1_0.categorie_id,
+        a1_0.id,
+        a1_0.created_at,
+        a1_0.description,
+        a1_0.image_url,
+        a1_0.marque_id,
+        a1_0.nom,
+        a1_0.prix,
+        a1_0.reference,
+        a1_0.stock,
+        a1_0.updated_at 
+    from
+        accessoires a1_0 
+    where
+        a1_0.categorie_id=?
+2026-04-07T20:29:31.012+01:00  INFO 5712 --- [nio-8081-exec-3] c.p.controller.CategorieController       : GET /api/categories - R�cup�ration toutes les cat�gories
+2026-04-07T20:29:31.012+01:00 DEBUG 5712 --- [nio-8081-exec-3] c.p.service.CategorieServiceImpl         : R�cup�ration de toutes les cat�gories
+2026-04-07T20:29:31.013+01:00 DEBUG 5712 --- [nio-8081-exec-3] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.created_at,
+        c1_0.description,
+        c1_0.nom 
+    from
+        categories c1_0
+Hibernate: 
+    select
+        c1_0.id,
+        c1_0.created_at,
+        c1_0.description,
+        c1_0.nom 
+    from
+        categories c1_0
+2026-04-07T20:29:31.015+01:00 DEBUG 5712 --- [nio-8081-exec-3] org.hibernate.SQL                        : 
+    select
+        a1_0.categorie_id,
+        a1_0.id,
+        a1_0.created_at,
+        a1_0.description,
+        a1_0.image_url,
+        a1_0.marque_id,
+        a1_0.nom,
+        a1_0.prix,
+        a1_0.reference,
+        a1_0.stock,
+        a1_0.updated_at 
+    from
+        accessoires a1_0 
+    where
+        a1_0.categorie_id=?
+Hibernate: 
+    select
+        a1_0.categorie_id,
+        a1_0.id,
+        a1_0.created_at,
+        a1_0.description,
+        a1_0.image_url,
+        a1_0.marque_id,
+        a1_0.nom,
+        a1_0.prix,
+        a1_0.reference,
+        a1_0.stock,
+        a1_0.updated_at 
+    from
+        accessoires a1_0 
+    where
+        a1_0.categorie_id=?
+2026-04-07T20:29:44.040+01:00  INFO 5712 --- [nio-8081-exec-4] c.p.controller.CategorieController       : GET /api/categories - R�cup�ration toutes les cat�gories
+2026-04-07T20:29:44.041+01:00 DEBUG 5712 --- [nio-8081-exec-4] c.p.service.CategorieServiceImpl         : R�cup�ration de toutes les cat�gories
+2026-04-07T20:29:44.042+01:00 DEBUG 5712 --- [nio-8081-exec-4] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.created_at,
+        c1_0.description,
+        c1_0.nom 
+    from
+        categories c1_0
+Hibernate: 
+    select
+        c1_0.id,
+        c1_0.created_at,
+        c1_0.description,
+        c1_0.nom 
+    from
+        categories c1_0
+2026-04-07T20:29:44.044+01:00 DEBUG 5712 --- [nio-8081-exec-4] org.hibernate.SQL                        : 
+    select
+        a1_0.categorie_id,
+        a1_0.id,
+        a1_0.created_at,
+        a1_0.description,
+        a1_0.image_url,
+        a1_0.marque_id,
+        a1_0.nom,
+        a1_0.prix,
+        a1_0.reference,
+        a1_0.stock,
+        a1_0.updated_at 
+    from
+        accessoires a1_0 
+    where
+        a1_0.categorie_id=?
+Hibernate: 
+    select
+        a1_0.categorie_id,
+        a1_0.id,
+        a1_0.created_at,
+        a1_0.description,
+        a1_0.image_url,
+        a1_0.marque_id,
+        a1_0.nom,
+        a1_0.prix,
+        a1_0.reference,
+        a1_0.stock,
+        a1_0.updated_at 
+    from
+        accessoires a1_0 
+    where
+        a1_0.categorie_id=?

@@ -1,0 +1,98 @@
+{
+  "java.jdt.ls.java.home": "/path/to/jdk",
+  "java.configuration.updateBuildConfiguration": "automatic",
+  "java.project.referencedLibraries": ["lib/**/*.jar"],
+  "java.import.gradle.enabled": false,
+  
+  "maven.executable.path": "mvn",
+  "maven.showBuildStatusOnStartup": true,
+  
+  "editor.formatOnSave": false,
+  "editor.formatOnPaste": true,
+  "editor.fontSize": 14,
+  "editor.fontFamily": "Consolas, 'Courier New', monospace",
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.trimAutoWhitespace": true,
+  "editor.wordWrap": "on",
+  
+  "files.exclude": {
+    "**/node_modules": true,
+    "**/dist": true,
+    "**/build": true,
+    "**/.next": true,
+    "**/target": true,
+    "**/.idea": true,
+    "**/*.class": true
+  },
+  
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/dist": true,
+    "**/target": true,
+    "**/.next": true
+  },
+  
+  "eslint.enable": true,
+  "eslint.alwaysShowStatus": true,
+  
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "typescript.updateImportsOnFileMove.enabled": "prompt",
+  
+  "[typescript]": {
+    "editor.formatOnSave": false
+  },
+  
+  "[javascript]": {
+    "editor.formatOnSave": false
+  },
+  
+  "[java]": {
+    "editor.formatOnSave": false
+  },
+  
+  "[json]": {
+    "editor.formatOnSave": false
+  },
+  
+  "[sql]": {
+    "editor.formatOnSave": false
+  },
+  
+  "prettier.printWidth": 100,
+  "prettier.tabWidth": 2,
+  "prettier.semi": true,
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "es5",
+  "prettier.useTabs": false,
+  "prettier.bracketSpacing": true,
+  "prettier.arrowParens": "avoid",
+  
+  "git.ignoreLimitWarning": true,
+  "git.autofetch": true,
+  
+  "terminal.integrated.profiles.windows": {
+    "PowerShell": {
+      "source": "PowerShell",
+      "icon": "terminal-powershell"
+    },
+    "Command Prompt": {
+      "path": ["${env:windir}\\System32\\cmd.exe"],
+      "icon": "terminal-cmd"
+    }
+  },
+  
+  "terminal.integrated.defaultProfile.windows": "PowerShell",
+  
+  "workbench.editor.enablePreviewFromCodeNavigation": true,
+  "workbench.editor.enablePreview": true,
+  "workbench.sideBar.location": "left",
+  
+  "explorer.confirmDelete": true,
+  "explorer.confirmDragAndDrop": true,
+  
+  "docker.showStartPage": false,
+  
+  "extensions.ignoreRecommendations": false
+}
