@@ -2,8 +2,9 @@
 import { useState, useEffect } from 'react';
 import { useCart } from '@/lib/context/CartContext';
 import { authService } from '@/lib/api/authService';
+import { commandeService } from '@/lib/api/commandeService';
 import { useRouter } from 'next/navigation';
-import { CreditCard, Truck, CheckCircle2 } from 'lucide-react';
+import { CreditCard, Truck, CheckCircle2, Printer } from 'lucide-react';
 import Link from 'next/link';
 
 export default function CheckoutPage() {
@@ -12,6 +13,15 @@ export default function CheckoutPage() {
   const [step, setStep] = useState(1);
   const [paymentMethod, setPaymentMethod] = useState('livraison');
   const [loading, setLoading] = useState(false);
+  const [orderSummary, setOrderSummary] = useState<any>(null);
+  
+  const [formData, setFormData] = useState({
+    prenom: '',
+    nom: '',
+    adresse: '',
+    ville: '',
+    telephone: ''
+  });
 
   useEffect(() => {
     if (cart.length === 0 && step !== 3) {
@@ -21,70 +31,163 @@ export default function CheckoutPage() {
 
   const isAuthenticated = authService.isAuthenticated();
 
-  const handleOrder = async () => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleOrder = async (e: React.FormEvent) => {
+    e.preventDefault();
     setLoading(true);
-    // Simuler un appel API pour créer la commande
-    setTimeout(() => {
-      setLoading(false);
+    try {
+      const lignes = cart.map(item => ({
+        accessoireId: item.product.id,
+        quantite: item.quantity
+      }));
+
+      const payload = {
+        ...formData,
+        methodPaiement: paymentMethod,
+        lignes
+      };
+
+      const response = await commandeService.create(payload);
+      
+      setOrderSummary({
+        items: [...cart],
+        total: response.data.total,
+        date: new Date(response.data.createdAt).toLocaleDateString('fr-FR'),
+        id: "CMD-" + response.data.id
+      });
       setStep(3); // Success
       clearCart();
-    }, 1500);
+    } catch (error: any) {
+      alert("Erreur lors de la création de la commande: " + (error.response?.data?.message || "Erreur interne"));
+      console.error(error);
+    } finally {
+      setLoading(false);
+    }
   };
 
   if (cart.length === 0 && step !== 3) {
     return null;
   }
 
-  if (step === 3) {
+  if (step === 3 && orderSummary) {
     return (
-      <div className="flex flex-col items-center justify-center min-h-[60vh] animate-in zoom-in-95 duration-500 text-center">
-        <CheckCircle2 className="h-24 w-24 text-green-500 mb-6" />
-        <h1 className="text-4xl font-extrabold mb-4">Commande Confirmée !</h1>
-        <p className="text-lg text-slate-500 max-w-md mb-8">Merci pour votre achat. Vous recevrez un email de confirmation avec le numéro de suivi de votre colis très bientôt.</p>
-        <Link href="/" className="bg-primary text-white font-bold px-8 py-3 rounded-full hover:bg-primary/90 transition-colors">
-          Retour à l'accueil
-        </Link>
+      <div className="max-w-3xl mx-auto py-10 animate-in zoom-in-95 duration-500">
+        <div className="text-center print:hidden">
+          <CheckCircle2 className="h-20 w-20 text-green-500 mx-auto mb-4" />
+          <h1 className="text-4xl font-extrabold mb-2">Commande Confirmée !</h1>
+          <p className="text-lg text-slate-500 mb-8">Merci pour votre achat. Voici votre reçu.</p>
+          
+          <div className="flex justify-center gap-4 mb-8">
+            <button onClick={() => window.print()} className="bg-slate-900 dark:bg-white dark:text-slate-900 text-white font-bold px-6 py-3 rounded-xl hover:bg-slate-800 transition-colors flex items-center gap-2">
+              <Printer className="h-5 w-5" /> Imprimer la facture (PDF)
+            </button>
+            <Link href="/" className="bg-primary text-white font-bold px-6 py-3 rounded-xl hover:bg-primary/90 transition-colors">
+              Retour à l'accueil
+            </Link>
+          </div>
+        </div>
+
+        {/* Zone imprimable : Facture */}
+        <div className="bg-white text-black p-10 border rounded-2xl shadow-sm print:shadow-none print:border-none print:p-0">
+          <div className="flex justify-between items-start mb-10 border-b pb-8">
+            <div>
+              <h2 className="text-3xl font-black text-primary mb-2">TECHSTORE</h2>
+              <p className="text-slate-500">Avenue Habib Bourguiba, Tunis</p>
+              <p className="text-slate-500">contact@techstore.tn | +216 71 000 000</p>
+            </div>
+            <div className="text-right">
+              <h2 className="text-2xl font-bold text-slate-300 mb-2">FACTURE</h2>
+              <p className="font-bold">N° : {orderSummary.id}</p>
+              <p className="text-slate-500">Date : {orderSummary.date}</p>
+            </div>
+          </div>
+
+          <table className="w-full mb-8">
+            <thead>
+              <tr className="border-b-2 border-slate-800">
+                <th className="text-left py-3 font-bold">Produit</th>
+                <th className="text-center py-3 font-bold">Qté</th>
+                <th className="text-right py-3 font-bold">Prix Unitaire</th>
+                <th className="text-right py-3 font-bold">Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              {orderSummary.items.map((item: any, idx: number) => (
+                <tr key={idx} className="border-b border-slate-100">
+                  <td className="py-4 font-medium">{item.product.nom}</td>
+                  <td className="text-center py-4">{item.quantity}</td>
+                  <td className="text-right py-4">{item.product.prix.toFixed(2)} TND</td>
+                  <td className="text-right py-4 font-bold">{(item.product.prix * item.quantity).toFixed(2)} TND</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+
+          <div className="flex justify-end">
+            <div className="w-64 space-y-3">
+              <div className="flex justify-between text-slate-500">
+                <span>Sous-total HT</span>
+                <span>{(orderSummary.total * 0.81).toFixed(2)} TND</span>
+              </div>
+              <div className="flex justify-between text-slate-500">
+                <span>TVA (19%)</span>
+                <span>{(orderSummary.total * 0.19).toFixed(2)} TND</span>
+              </div>
+              <div className="flex justify-between text-xl font-black border-t-2 border-slate-800 pt-3">
+                <span>Total TTC</span>
+                <span>{orderSummary.total.toFixed(2)} TND</span>
+              </div>
+            </div>
+          </div>
+          
+          <div className="mt-16 text-center text-sm text-slate-500 border-t pt-8">
+            Merci de votre confiance. Document généré électroniquement.
+          </div>
+        </div>
       </div>
     );
   }
 
   return (
-    <div className="max-w-4xl mx-auto space-y-8 animate-in fade-in duration-500">
+    <div className="max-w-4xl mx-auto space-y-8 animate-in fade-in duration-500 print:hidden">
       <h1 className="text-3xl font-bold tracking-tight">Finaliser la commande</h1>
 
-      <div className="flex flex-col md:flex-row gap-8">
+      <form id="checkout-form" onSubmit={handleOrder} className="flex flex-col md:flex-row gap-8">
         <div className="flex-1 space-y-6">
           {/* Section Adresse */}
           <div className="bg-white dark:bg-slate-900 border rounded-2xl p-6 shadow-sm">
             <h2 className="text-xl font-bold mb-4 flex items-center gap-2"><span className="bg-primary text-white h-6 w-6 rounded-full flex items-center justify-center text-sm">1</span> Informations de Livraison</h2>
             {!isAuthenticated && (
               <div className="bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 p-4 rounded-xl mb-4 text-sm flex justify-between items-center">
-                <span>Connectez-vous pour utiliser vos adresses enregistrées.</span>
+                <span>Connectez-vous pour pré-remplir vos informations.</span>
                 <Link href="/login" className="font-bold underline">Se connecter</Link>
               </div>
             )}
-            <form className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 gap-4">
               <div className="space-y-1 col-span-2 sm:col-span-1">
                 <label className="text-sm font-medium">Prénom</label>
-                <input type="text" className="w-full p-2 rounded-lg border bg-slate-50 dark:bg-slate-800" required />
+                <input type="text" name="prenom" value={formData.prenom} onChange={handleInputChange} className="w-full p-2 rounded-lg border bg-slate-50 dark:bg-slate-800" required />
               </div>
               <div className="space-y-1 col-span-2 sm:col-span-1">
                 <label className="text-sm font-medium">Nom</label>
-                <input type="text" className="w-full p-2 rounded-lg border bg-slate-50 dark:bg-slate-800" required />
+                <input type="text" name="nom" value={formData.nom} onChange={handleInputChange} className="w-full p-2 rounded-lg border bg-slate-50 dark:bg-slate-800" required />
               </div>
               <div className="space-y-1 col-span-2">
                 <label className="text-sm font-medium">Adresse complète</label>
-                <input type="text" className="w-full p-2 rounded-lg border bg-slate-50 dark:bg-slate-800" required />
+                <input type="text" name="adresse" value={formData.adresse} onChange={handleInputChange} className="w-full p-2 rounded-lg border bg-slate-50 dark:bg-slate-800" required />
               </div>
               <div className="space-y-1 col-span-2 sm:col-span-1">
                 <label className="text-sm font-medium">Ville</label>
-                <input type="text" className="w-full p-2 rounded-lg border bg-slate-50 dark:bg-slate-800" required />
+                <input type="text" name="ville" value={formData.ville} onChange={handleInputChange} className="w-full p-2 rounded-lg border bg-slate-50 dark:bg-slate-800" required />
               </div>
               <div className="space-y-1 col-span-2 sm:col-span-1">
                 <label className="text-sm font-medium">Téléphone</label>
-                <input type="tel" className="w-full p-2 rounded-lg border bg-slate-50 dark:bg-slate-800" required />
+                <input type="tel" name="telephone" value={formData.telephone} onChange={handleInputChange} className="w-full p-2 rounded-lg border bg-slate-50 dark:bg-slate-800" required />
               </div>
-            </form>
+            </div>
           </div>
 
           {/* Section Paiement */}
@@ -152,12 +255,14 @@ export default function CheckoutPage() {
               </div>
             </div>
 
-            <button onClick={handleOrder} disabled={loading} className="w-full bg-primary text-white font-bold py-3.5 rounded-xl hover:bg-primary/90 transition-colors flex items-center justify-center gap-2 shadow-lg shadow-primary/25 disabled:opacity-50">
+            <button type="submit" form="checkout-form" disabled={loading} className="w-full bg-primary text-white font-bold py-3.5 rounded-xl hover:bg-primary/90 transition-colors flex items-center justify-center gap-2 shadow-lg shadow-primary/25 disabled:opacity-50">
               {loading ? 'Traitement...' : 'Confirmer l\'achat'} <CheckCircle2 className="h-5 w-5" />
             </button>
           </div>
         </div>
-      </div>
+      </form>
     </div>
   );
 }
+
+

@@ -74,6 +74,15 @@ public class GlobalExceptionHandler {
     }
 
     /**
+     * Gestion des erreurs d'arguments invalides → HTTP 400
+     */
+    @ExceptionHandler(IllegalArgumentException.class)
+    public ResponseEntity<ApiResponse<Object>> handleIllegalArgumentException(IllegalArgumentException ex) {
+        ApiResponse<Object> response = ApiResponse.error(ex.getMessage());
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
+    }
+
+    /**
      * Gestion des erreurs génériques → HTTP 500
      */
     @ExceptionHandler(Exception.class)

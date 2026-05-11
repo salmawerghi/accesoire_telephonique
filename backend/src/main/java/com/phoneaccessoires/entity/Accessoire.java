@@ -50,6 +50,9 @@ public class Accessoire {
     @OneToMany(mappedBy = "accessoire", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<AccessoireImage> images = new ArrayList<>(); // Galerie d'images
 
+    @OneToMany(mappedBy = "accessoire", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Avis> avis = new ArrayList<>();
+
     @Column(name = "reference", length = 100, unique = true)
     private String reference;
 

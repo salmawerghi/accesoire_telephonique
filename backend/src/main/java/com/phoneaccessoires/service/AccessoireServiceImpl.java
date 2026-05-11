@@ -61,6 +61,13 @@ public class AccessoireServiceImpl implements AccessoireService {
     public AccessoireResponseDTO create(AccessoireDTO dto) {
         validateAccessoireData(dto);
 
+        // Vérifier si la référence est déjà utilisée
+        if (dto.getReference() != null && !dto.getReference().trim().isEmpty()) {
+            if (accessoireRepository.existsByReference(dto.getReference())) {
+                throw new IllegalArgumentException("Un accessoire avec cette référence existe déjà");
+            }
+        }
+
         Categorie categorie = null;
         if (dto.getCategorieId() != null) {
             categorie = categorieRepository.findById(dto.getCategorieId())
@@ -83,7 +90,7 @@ public class AccessoireServiceImpl implements AccessoireService {
                 .garantie(dto.getGarantie())
                 .caracteristiques(dto.getCaracteristiques())
                 .imageUrl(dto.getImageUrl())
-                .reference(dto.getReference())
+                .reference(dto.getReference() != null && !dto.getReference().trim().isEmpty() ? dto.getReference() : null)
                 .categorie(categorie)
                 .marque(marque)
                 .build();
@@ -106,9 +113,11 @@ public class AccessoireServiceImpl implements AccessoireService {
 
         validateAccessoireData(dto);
 
-        if (dto.getReference() != null && !dto.getReference().equals(accessoire.getReference())) {
-            if (accessoireRepository.existsByReference(dto.getReference())) {
-                throw new IllegalArgumentException("Cette référence est déjà utilisée");
+        String newRef = dto.getReference() != null && !dto.getReference().trim().isEmpty() ? dto.getReference() : null;
+        
+        if (newRef != null && !newRef.equals(accessoire.getReference())) {
+            if (accessoireRepository.existsByReference(newRef)) {
+                throw new IllegalArgumentException("Un accessoire avec cette référence existe déjà");
             }
         }
 
@@ -133,7 +142,7 @@ public class AccessoireServiceImpl implements AccessoireService {
         accessoire.setGarantie(dto.getGarantie());
         accessoire.setCaracteristiques(dto.getCaracteristiques());
         accessoire.setImageUrl(dto.getImageUrl());
-        accessoire.setReference(dto.getReference());
+        accessoire.setReference(newRef);
         accessoire.setCategorie(categorie);
         accessoire.setMarque(marque);
 
@@ -193,6 +202,28 @@ public class AccessoireServiceImpl implements AccessoireService {
         if (dto.getStock() != null && dto.getStock() < 0) {
             throw new IllegalArgumentException("Le stock ne peut pas être négatif");
         }
+    }
+
+    @Override
+    @org.springframework.transaction.annotation.Transactional
+    public AccessoireResponseDTO applyPromotion(Long id, BigDecimal nouveauPrix) {
+        Accessoire accessoire = accessoireRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Accessoire", "id", id));
+
+        if (nouveauPrix == null || nouveauPrix.compareTo(BigDecimal.ZERO) <= 0) {
+            throw new IllegalArgumentException("Le prix promotionnel doit être supérieur à 0");
+        }
+
+        // Si ce n'est pas déjà en promotion, on sauvegarde le prix actuel
+        if (accessoire.getPrixAncien() == null) {
+            accessoire.setPrixAncien(accessoire.getPrix());
+        }
+        
+        accessoire.setPrix(nouveauPrix);
+        accessoire.setEnPromotion(true);
+
+        Accessoire saved = accessoireRepository.save(accessoire);
+        return mapToResponseDTO(saved);
     }
 
     private AccessoireResponseDTO mapToResponseDTO(Accessoire accessoire) {

@@ -92,6 +92,10 @@ export const accessoireService = {
     const response = await api.put(`/accessoires/${id}`, data);
     return response.data;
   },
+  applyPromotion: async (id: number, nouveauPrix: number) => {
+    const response = await api.put(`/accessoires/${id}/promotion?nouveauPrix=${nouveauPrix}`);
+    return response.data;
+  },
   delete: async (id: number) => {
     const response = await api.delete(`/accessoires/${id}`);
     return response.data;

@@ -48,7 +48,7 @@ export default function PanierPage() {
                   <div className="flex items-center bg-slate-100 dark:bg-slate-800 rounded-lg p-1">
                     <button onClick={() => updateQuantity(item.product.id, item.quantity - 1)} className="p-1 hover:bg-white dark:hover:bg-slate-700 rounded-md transition-colors"><Minus className="h-4 w-4" /></button>
                     <span className="w-8 text-center font-medium">{item.quantity}</span>
-                    <button onClick={() => updateQuantity(item.product.id, item.quantity + 1)} className="p-1 hover:bg-white dark:hover:bg-slate-700 rounded-md transition-colors"><Plus className="h-4 w-4" /></button>
+                    <button onClick={() => updateQuantity(item.product.id, Math.min(item.product.stock, item.quantity + 1))} className="p-1 hover:bg-white dark:hover:bg-slate-700 rounded-md transition-colors"><Plus className="h-4 w-4" /></button>
                   </div>
                 </div>
               </div>

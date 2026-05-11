@@ -46,9 +46,10 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     setCart(prev => {
       const existing = prev.find(item => item.product.id === product.id);
       if (existing) {
-        return prev.map(item => item.product.id === product.id ? { ...item, quantity: item.quantity + quantity } : item);
+        const newQuantity = Math.min(product.stock, existing.quantity + quantity);
+        return prev.map(item => item.product.id === product.id ? { ...item, quantity: newQuantity } : item);
       }
-      return [...prev, { product, quantity }];
+      return [...prev, { product, quantity: Math.min(product.stock, quantity) }];
     });
   };
 
@@ -57,7 +58,12 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   };
 
   const updateQuantity = (productId: number, quantity: number) => {
-    setCart(prev => prev.map(item => item.product.id === productId ? { ...item, quantity: Math.max(1, quantity) } : item));
+    setCart(prev => prev.map(item => {
+      if (item.product.id === productId) {
+        return { ...item, quantity: Math.max(1, Math.min(item.product.stock, quantity)) };
+      }
+      return item;
+    }));
   };
 
   const clearCart = () => setCart([]);

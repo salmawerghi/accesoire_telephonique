@@ -1,12 +1,13 @@
 "use client";
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { ShoppingCart, Search, Menu, User, Phone, LogOut } from 'lucide-react';
+import { ShoppingCart, Search, Menu, User, Phone, LogOut, Heart } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useState, useEffect } from 'react';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import { authService } from '@/lib/api/authService';
 import { useCart } from '@/lib/context/CartContext';
+import { useWishlist } from '@/lib/context/WishlistContext';
 
 export function Navbar() {
   const pathname = usePathname();
@@ -14,6 +15,7 @@ export function Navbar() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
   const { cartCount } = useCart();
+  const { wishlistCount } = useWishlist();
 
   useEffect(() => {
     setIsAuthenticated(authService.isAuthenticated());
@@ -94,6 +96,18 @@ export function Navbar() {
               <span className="text-[10px] font-medium mt-1">Connexion</span>
             </Link>
           )}
+          
+          <Link href="/wishlist" className="relative flex flex-col items-center justify-center p-2 text-slate-600 dark:text-slate-400 hover:text-red-500 transition-colors group">
+            <div className="relative">
+              <Heart className="h-6 w-6 group-hover:scale-110 transition-transform" />
+              {wishlistCount > 0 && (
+                <span className="absolute -top-1.5 -right-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-red-500 text-[10px] font-bold text-white ring-2 ring-white dark:ring-slate-950">
+                  {wishlistCount}
+                </span>
+              )}
+            </div>
+            <span className="text-[10px] font-medium mt-1 hidden sm:block">Favoris</span>
+          </Link>
           
           <Link href="/panier" className="relative flex flex-col items-center justify-center p-2 text-slate-600 dark:text-slate-400 hover:text-primary transition-colors group">
             <div className="relative">

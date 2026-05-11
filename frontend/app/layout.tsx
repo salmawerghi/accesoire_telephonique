@@ -4,6 +4,7 @@ import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { CartProvider } from "@/lib/context/CartContext";
+import { WishlistProvider } from "@/lib/context/WishlistContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,16 +27,18 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <CartProvider>
-            <div className="relative flex min-h-screen flex-col">
-              <Navbar />
-              <main className="flex-1">
-                <div className="container max-w-screen-2xl py-6 lg:py-10">
-                  {children}
-                </div>
-              </main>
-            </div>
-          </CartProvider>
+          <WishlistProvider>
+            <CartProvider>
+              <div className="relative flex min-h-screen flex-col">
+                <Navbar />
+                <main className="flex-1">
+                  <div className="container max-w-screen-2xl py-6 lg:py-10">
+                    {children}
+                  </div>
+                </main>
+              </div>
+            </CartProvider>
+          </WishlistProvider>
         </ThemeProvider>
       </body>
     </html>

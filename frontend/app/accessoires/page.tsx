@@ -5,14 +5,22 @@ import { categorieService, Categorie } from '@/lib/api/categorieService';
 import { marqueService, Marque } from '@/lib/api/marqueService';
 import Link from 'next/link';
 import { useSearchParams, useRouter } from 'next/navigation';
-import { ShoppingCart, Filter, X, Check } from 'lucide-react';
+import { ShoppingCart, Filter, X, Check, Heart } from 'lucide-react';
 import { useCart } from '@/lib/context/CartContext';
+import { useWishlist } from '@/lib/context/WishlistContext';
+import { cn } from '@/lib/utils';
 
 function AccessoiresContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const { addToCart } = useCart();
+  const { toggleWishlist, isInWishlist } = useWishlist();
   const [addedItems, setAddedItems] = useState<{[key: number]: boolean}>({});
+
+  const handleToggleWishlist = (e: React.MouseEvent, acc: Accessoire) => {
+    e.preventDefault();
+    toggleWishlist(acc);
+  };
 
   const handleAddToCart = (e: React.MouseEvent, acc: Accessoire) => {
     e.preventDefault();
@@ -201,6 +209,15 @@ function AccessoiresContent() {
                 )}
                 <Link href={`/accessoires/${acc.id}`} className="relative aspect-square p-4 flex items-center justify-center bg-slate-50 group-hover:bg-slate-100 transition-colors">
                   <img src={acc.imageUrl || 'https://via.placeholder.com/300'} alt={acc.nom} className={`max-w-full max-h-full object-contain mix-blend-multiply group-hover:scale-105 transition-transform ${acc.stock <= 0 ? 'grayscale opacity-60' : ''}`} />
+                  <button 
+                    onClick={(e) => handleToggleWishlist(e, acc)}
+                    className={cn(
+                      "absolute top-3 right-3 h-8 w-8 rounded-full flex items-center justify-center shadow-sm transition-all z-10",
+                      isInWishlist(acc.id) ? "bg-red-500 text-white" : "bg-white/80 text-slate-400 hover:text-red-500 hover:bg-white"
+                    )}
+                  >
+                    <Heart className={cn("h-4 w-4", isInWishlist(acc.id) && "fill-current")} />
+                  </button>
                 </Link>
                 <div className="p-4 flex flex-col flex-1">
                   <div className="text-xs text-slate-500 mb-1 font-medium">{acc.marqueNom}</div>

@@ -5,7 +5,7 @@ echo     Lancement de l'Application Accessoires
 echo ===================================================
 
 echo.
-echo [1] Demarrage du Backend Spring Boot (port 8080)...
+echo [1] Demarrage du Backend Spring Boot (port 8082)...
 start "Backend Spring" cmd /c "cd backend && mvn spring-boot:run"
 
 echo.
@@ -20,7 +20,7 @@ echo.
 echo ===================================================
 echo   Application en cours d'execution !
 echo   - Backend DB: Assurez-vous que PostgreSQL est allume sur le port 5432
-echo   - API : http://localhost:8080/api
+echo   - API : http://localhost:8082/api
 echo   - Web : http://localhost:3000
 echo ===================================================
 echo.

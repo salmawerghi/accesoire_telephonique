@@ -100,6 +100,14 @@ public class AccessoireController {
         return ResponseEntity.ok(ApiResponse.success(updated, "Accessoire mis à jour avec succès"));
     }
 
+    @PutMapping("/{id}/promotion")
+    public ResponseEntity<ApiResponse<AccessoireResponseDTO>> applyPromotion(
+            @PathVariable Long id,
+            @RequestParam BigDecimal nouveauPrix) {
+        AccessoireResponseDTO updated = accessoireService.applyPromotion(id, nouveauPrix);
+        return ResponseEntity.ok(ApiResponse.success(updated, "Promotion appliquée avec succès"));
+    }
+
     @DeleteMapping("/{id}")
     public ResponseEntity<ApiResponse<Void>> delete(@PathVariable Long id) {
         accessoireService.delete(id);

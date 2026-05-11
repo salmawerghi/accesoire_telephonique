@@ -34,12 +34,14 @@ export default function EditAccessoirePage() {
           nom: acc.nom,
           description: acc.description || '',
           prix: acc.prix,
+          prixAncien: acc.prixAncien ?? undefined,
           stock: acc.stock,
+          enPromotion: acc.enPromotion || false,
           reference: acc.reference || '',
           imageUrl: acc.imageUrl || '',
           categorieId: acc.categorieId || acc.categorie?.id,
           marqueId: acc.marqueId || acc.marque?.id,
-        });
+        } as any);
       } catch (e) {
         console.error("Erreur chargement accessoire", e);
         alert("Accessoire introuvable");
@@ -57,7 +59,9 @@ export default function EditAccessoirePage() {
         nom: data.nom,
         description: data.description || undefined,
         prix: Number(data.prix),
+        prixAncien: data.prixAncien ? Number(data.prixAncien) : undefined,
         stock: data.stock ? Number(data.stock) : 0,
+        enPromotion: !!data.enPromotion,
         imageUrl: data.imageUrl || undefined,
         reference: data.reference || undefined,
         categorieId: data.categorieId ? Number(data.categorieId) : undefined,
@@ -126,6 +130,30 @@ export default function EditAccessoirePage() {
             </div>
 
             <div className="space-y-2">
+              <label className="text-sm font-medium leading-none">Prix Ancien (€)</label>
+              <input 
+                type="number" step="0.01" min="0"
+                {...register("prixAncien")} 
+                className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-sm focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring" 
+                placeholder="Laisser vide si pas de promo"
+              />
+            </div>
+          </div>
+
+          <div className="flex items-center space-x-2">
+            <input 
+              type="checkbox" 
+              id="enPromotion"
+              {...register("enPromotion")} 
+              className="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary"
+            />
+            <label htmlFor="enPromotion" className="text-sm font-medium leading-none cursor-pointer">
+              En Promotion 🔥
+            </label>
+          </div>
+
+          <div className="grid grid-cols-2 gap-4">
+            <div className="space-y-2">
               <label className="text-sm font-medium leading-none">Stock</label>
               <input 
                 type="number" min="0"
@@ -133,9 +161,7 @@ export default function EditAccessoirePage() {
                 className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-sm focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring" 
               />
             </div>
-          </div>
 
-          <div className="grid grid-cols-2 gap-4">
             <div className="space-y-2">
               <label className="text-sm font-medium leading-none">Catégorie</label>
               <select 
@@ -146,7 +172,9 @@ export default function EditAccessoirePage() {
                 {categories.map(c => <option key={c.id} value={c.id}>{c.nom}</option>)}
               </select>
             </div>
+          </div>
 
+          <div className="grid grid-cols-2 gap-4">
             <div className="space-y-2">
               <label className="text-sm font-medium leading-none">Marque</label>
               <select 

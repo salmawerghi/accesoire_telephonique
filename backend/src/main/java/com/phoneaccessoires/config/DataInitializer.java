@@ -3,12 +3,16 @@ package com.phoneaccessoires.config;
 import com.phoneaccessoires.entity.Accessoire;
 import com.phoneaccessoires.entity.Categorie;
 import com.phoneaccessoires.entity.Marque;
+import com.phoneaccessoires.entity.Utilisateur;
 import com.phoneaccessoires.repository.AccessoireRepository;
 import com.phoneaccessoires.repository.CategorieRepository;
 import com.phoneaccessoires.repository.MarqueRepository;
+import com.phoneaccessoires.repository.UtilisateurRepository;
+import com.phoneaccessoires.security.Role;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -27,18 +31,37 @@ public class DataInitializer implements CommandLineRunner {
     private final CategorieRepository categorieRepository;
     private final MarqueRepository marqueRepository;
     private final AccessoireRepository accessoireRepository;
+    private final UtilisateurRepository utilisateurRepository;
+    private final PasswordEncoder passwordEncoder;
 
     public DataInitializer(CategorieRepository categorieRepository,
                            MarqueRepository marqueRepository,
-                           AccessoireRepository accessoireRepository) {
+                           AccessoireRepository accessoireRepository,
+                           UtilisateurRepository utilisateurRepository,
+                           PasswordEncoder passwordEncoder) {
         this.categorieRepository = categorieRepository;
         this.marqueRepository = marqueRepository;
         this.accessoireRepository = accessoireRepository;
+        this.utilisateurRepository = utilisateurRepository;
+        this.passwordEncoder = passwordEncoder;
     }
 
     @Override
     @Transactional
     public void run(String... args) {
+        // Créer un utilisateur admin par défaut s'il n'existe pas
+        if (utilisateurRepository.findByEmail("admin@techstore.tn").isEmpty()) {
+            Utilisateur admin = Utilisateur.builder()
+                    .nom("Admin")
+                    .prenom("TechStore")
+                    .email("admin@techstore.tn")
+                    .password(passwordEncoder.encode("admin123"))
+                    .role(Role.ADMIN)
+                    .build();
+            utilisateurRepository.save(admin);
+            log.info("Utilisateur administrateur créé : admin@techstore.tn / admin123");
+        }
+
         // Ne charger les données que si la base est vide
         if (categorieRepository.count() > 0) {
             log.info("Base de données déjà initialisée, skip du chargement des données de test.");

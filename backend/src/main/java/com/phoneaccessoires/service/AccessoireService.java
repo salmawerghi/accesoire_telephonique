@@ -30,4 +30,6 @@ public interface AccessoireService {
     Page<AccessoireResponseDTO> findByMarqueId(Long marqueId, Pageable pageable);
 
     Page<AccessoireResponseDTO> searchAdvanced(String nom, Long categorieId, Long marqueId, Boolean enPromotion, BigDecimal prixMin, BigDecimal prixMax, Pageable pageable);
+
+    AccessoireResponseDTO applyPromotion(Long id, BigDecimal nouveauPrix);
 }
