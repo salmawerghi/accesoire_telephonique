@@ -5,6 +5,7 @@ import { Navbar } from "@/components/Navbar";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { CartProvider } from "@/lib/context/CartContext";
 import { WishlistProvider } from "@/lib/context/WishlistContext";
+import { ChatBot } from "@/components/ChatBot";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -36,6 +37,7 @@ export default function RootLayout({
                     {children}
                   </div>
                 </main>
+                <ChatBot />
               </div>
             </CartProvider>
           </WishlistProvider>

@@ -1,0 +1,1244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.phoneaccessoires.controller.AccessoireControllerTest" time="17.232" tests="2" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="25"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.class.path" value="C:\Users\asus\Desktop\version_final_wahid\projet_wahid - Copie\projet_wahid - Copie\backend\target\test-classes;C:\Users\asus\Desktop\version_final_wahid\projet_wahid - Copie\projet_wahid - Copie\backend\target\classes;C:\Users\asus\.m2\repository\org\springframework\boot\spring-boot-starter-web\3.2.0\spring-boot-starter-web-3.2.0.jar;C:\Users\asus\.m2\repository\org\springframework\boot\spring-boot-starter\3.2.0\spring-boot-starter-3.2.0.jar;C:\Users\asus\.m2\repository\org\springframework\boot\spring-boot\3.2.0\spring-boot-3.2.0.jar;C:\Users\asus\.m2\repository\org\springframework\boot\spring-boot-autoconfigure\3.2.0\spring-boot-autoconfigure-3.2.0.jar;C:\Users\asus\.m2\repository\org\springframework\boot\spring-boot-starter-logging\3.2.0\spring-boot-starter-logging-3.2.0.jar;C:\Users\asus\.m2\repository\ch\qos\logback\logback-classic\1.4.11\logback-classic-1.4.11.jar;C:\Users\asus\.m2\repository\ch\qos\logback\logback-core\1.4.11\logback-core-1.4.11.jar;C:\Users\asus\.m2\repository\org\apache\logging\log4j\log4j-to-slf4j\2.21.1\log4j-to-slf4j-2.21.1.jar;C:\Users\asus\.m2\repository\org\apache\logging\log4j\log4j-api\2.21.1\log4j-api-2.21.1.jar;C:\Users\asus\.m2\repository\org\slf4j\jul-to-slf4j\2.0.9\jul-to-slf4j-2.0.9.jar;C:\Users\asus\.m2\repository\jakarta\annotation\jakarta.annotation-api\2.1.1\jakarta.annotation-api-2.1.1.jar;C:\Users\asus\.m2\repository\org\yaml\snakeyaml\2.2\snakeyaml-2.2.jar;C:\Users\asus\.m2\repository\org\springframework\boot\spring-boot-starter-json\3.2.0\spring-boot-starter-json-3.2.0.jar;C:\Users\asus\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jdk8\2.15.3\jackson-datatype-jdk8-2.15.3.jar;C:\Users\asus\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.15.3\jackson-datatype-jsr310-2.15.3.jar;C:\Users\asus\.m2\repository\com\fasterxml\jackson\module\jackson-module-parameter-names\2.15.3\jackson-module-parameter-names-2.15.3.jar;C:\Users\asus\.m2\repository\org\springframework\boot\spring-boot-starter-tomcat\3.2.0\spring-boot-starter-tomcat-3.2.0.jar;C:\Users\asus\.m2\repository\org\apache\tomcat\embed\tomcat-embed-core\10.1.16\tomcat-embed-core-10.1.16.jar;C:\Users\asus\.m2\repository\org\apache\tomcat\embed\tomcat-embed-websocket\10.1.16\tomcat-embed-websocket-10.1.16.jar;C:\Users\asus\.m2\repository\org\springframework\spring-web\6.1.1\spring-web-6.1.1.jar;C:\Users\asus\.m2\repository\org\springframework\spring-beans\6.1.1\spring-beans-6.1.1.jar;C:\Users\asus\.m2\repository\io\micrometer\micrometer-observation\1.12.0\micrometer-observation-1.12.0.jar;C:\Users\asus\.m2\repository\io\micrometer\micrometer-commons\1.12.0\micrometer-commons-1.12.0.jar;C:\Users\asus\.m2\repository\org\springframework\spring-webmvc\6.1.1\spring-webmvc-6.1.1.jar;C:\Users\asus\.m2\repository\org\springframework\spring-context\6.1.1\spring-context-6.1.1.jar;C:\Users\asus\.m2\repository\org\springframework\spring-expression\6.1.1\spring-expression-6.1.1.jar;C:\Users\asus\.m2\repository\org\springframework\boot\spring-boot-starter-data-jpa\3.2.0\spring-boot-starter-data-jpa-3.2.0.jar;C:\Users\asus\.m2\repository\org\springframework\boot\spring-boot-starter-aop\3.2.0\spring-boot-starter-aop-3.2.0.jar;C:\Users\asus\.m2\repository\org\aspectj\aspectjweaver\1.9.20.1\aspectjweaver-1.9.20.1.jar;C:\Users\asus\.m2\repository\org\springframework\boot\spring-boot-starter-jdbc\3.2.0\spring-boot-starter-jdbc-3.2.0.jar;C:\Users\asus\.m2\repository\com\zaxxer\HikariCP\5.0.1\HikariCP-5.0.1.jar;C:\Users\asus\.m2\repository\org\springframework\spring-jdbc\6.1.1\spring-jdbc-6.1.1.jar;C:\Users\asus\.m2\repository\org\hibernate\orm\hibernate-core\6.3.1.Final\hibernate-core-6.3.1.Final.jar;C:\Users\asus\.m2\repository\jakarta\persistence\jakarta.persistence-api\3.1.0\jakarta.persistence-api-3.1.0.jar;C:\Users\asus\.m2\repository\jakarta\transaction\jakarta.transaction-api\2.0.1\jakarta.transaction-api-2.0.1.jar;C:\Users\asus\.m2\repository\org\jboss\logging\jboss-logging\3.5.3.Final\jboss-logging-3.5.3.Final.jar;C:\Users\asus\.m2\repository\org\hibernate\common\hibernate-commons-annotations\6.0.6.Final\hibernate-commons-annotations-6.0.6.Final.jar;C:\Users\asus\.m2\repository\io\smallrye\jandex\3.1.2\jandex-3.1.2.jar;C:\Users\asus\.m2\repository\com\fasterxml\classmate\1.6.0\classmate-1.6.0.jar;C:\Users\asus\.m2\repository\net\bytebuddy\byte-buddy\1.14.10\byte-buddy-1.14.10.jar;C:\Users\asus\.m2\repository\org\glassfish\jaxb\jaxb-runtime\4.0.4\jaxb-runtime-4.0.4.jar;C:\Users\asus\.m2\repository\org\glassfish\jaxb\jaxb-core\4.0.4\jaxb-core-4.0.4.jar;C:\Users\asus\.m2\repository\org\eclipse\angus\angus-activation\2.0.1\angus-activation-2.0.1.jar;C:\Users\asus\.m2\repository\org\glassfish\jaxb\txw2\4.0.4\txw2-4.0.4.jar;C:\Users\asus\.m2\repository\com\sun\istack\istack-commons-runtime\4.1.2\istack-commons-runtime-4.1.2.jar;C:\Users\asus\.m2\repository\jakarta\inject\jakarta.inject-api\2.0.1\jakarta.inject-api-2.0.1.jar;C:\Users\asus\.m2\repository\org\antlr\antlr4-runtime\4.10.1\antlr4-runtime-4.10.1.jar;C:\Users\asus\.m2\repository\org\springframework\data\spring-data-jpa\3.2.0\spring-data-jpa-3.2.0.jar;C:\Users\asus\.m2\repository\org\springframework\data\spring-data-commons\3.2.0\spring-data-commons-3.2.0.jar;C:\Users\asus\.m2\repository\org\springframework\spring-orm\6.1.1\spring-orm-6.1.1.jar;C:\Users\asus\.m2\repository\org\springframework\spring-tx\6.1.1\spring-tx-6.1.1.jar;C:\Users\asus\.m2\repository\org\slf4j\slf4j-api\2.0.9\slf4j-api-2.0.9.jar;C:\Users\asus\.m2\repository\org\springframework\spring-aspects\6.1.1\spring-aspects-6.1.1.jar;C:\Users\asus\.m2\repository\org\springframework\boot\spring-boot-starter-validation\3.2.0\spring-boot-starter-validation-3.2.0.jar;C:\Users\asus\.m2\repository\org\apache\tomcat\embed\tomcat-embed-el\10.1.16\tomcat-embed-el-10.1.16.jar;C:\Users\asus\.m2\repository\org\hibernate\validator\hibernate-validator\8.0.1.Final\hibernate-validator-8.0.1.Final.jar;C:\Users\asus\.m2\repository\jakarta\validation\jakarta.validation-api\3.0.2\jakarta.validation-api-3.0.2.jar;C:\Users\asus\.m2\repository\org\springframework\boot\spring-boot-starter-security\3.2.0\spring-boot-starter-security-3.2.0.jar;C:\Users\asus\.m2\repository\org\springframework\spring-aop\6.1.1\spring-aop-6.1.1.jar;C:\Users\asus\.m2\repository\org\springframework\security\spring-security-config\6.2.0\spring-security-config-6.2.0.jar;C:\Users\asus\.m2\repository\org\springframework\security\spring-security-web\6.2.0\spring-security-web-6.2.0.jar;C:\Users\asus\.m2\repository\io\jsonwebtoken\jjwt-api\0.11.5\jjwt-api-0.11.5.jar;C:\Users\asus\.m2\repository\io\jsonwebtoken\jjwt-impl\0.11.5\jjwt-impl-0.11.5.jar;C:\Users\asus\.m2\repository\io\jsonwebtoken\jjwt-jackson\0.11.5\jjwt-jackson-0.11.5.jar;C:\Users\asus\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.15.3\jackson-databind-2.15.3.jar;C:\Users\asus\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.15.3\jackson-annotations-2.15.3.jar;C:\Users\asus\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.15.3\jackson-core-2.15.3.jar;C:\Users\asus\.m2\repository\org\postgresql\postgresql\42.6.0\postgresql-42.6.0.jar;C:\Users\asus\.m2\repository\org\checkerframework\checker-qual\3.31.0\checker-qual-3.31.0.jar;C:\Users\asus\.m2\repository\org\projectlombok\lombok\1.18.30\lombok-1.18.30.jar;C:\Users\asus\.m2\repository\org\springframework\boot\spring-boot-starter-test\3.2.0\spring-boot-starter-test-3.2.0.jar;C:\Users\asus\.m2\repository\org\springframework\boot\spring-boot-test\3.2.0\spring-boot-test-3.2.0.jar;C:\Users\asus\.m2\repository\org\springframework\boot\spring-boot-test-autoconfigure\3.2.0\spring-boot-test-autoconfigure-3.2.0.jar;C:\Users\asus\.m2\repository\com\jayway\jsonpath\json-path\2.8.0\json-path-2.8.0.jar;C:\Users\asus\.m2\repository\jakarta\xml\bind\jakarta.xml.bind-api\4.0.1\jakarta.xml.bind-api-4.0.1.jar;C:\Users\asus\.m2\repository\jakarta\activation\jakarta.activation-api\2.1.2\jakarta.activation-api-2.1.2.jar;C:\Users\asus\.m2\repository\net\minidev\json-smart\2.5.0\json-smart-2.5.0.jar;C:\Users\asus\.m2\repository\net\minidev\accessors-smart\2.5.0\accessors-smart-2.5.0.jar;C:\Users\asus\.m2\repository\org\ow2\asm\asm\9.3\asm-9.3.jar;C:\Users\asus\.m2\repository\org\assertj\assertj-core\3.24.2\assertj-core-3.24.2.jar;C:\Users\asus\.m2\repository\org\awaitility\awaitility\4.2.0\awaitility-4.2.0.jar;C:\Users\asus\.m2\repository\org\hamcrest\hamcrest\2.2\hamcrest-2.2.jar;C:\Users\asus\.m2\repository\org\junit\jupiter\junit-jupiter\5.10.1\junit-jupiter-5.10.1.jar;C:\Users\asus\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.1\junit-jupiter-api-5.10.1.jar;C:\Users\asus\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\asus\.m2\repository\org\junit\platform\junit-platform-commons\1.10.1\junit-platform-commons-1.10.1.jar;C:\Users\asus\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\asus\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.10.1\junit-jupiter-params-5.10.1.jar;C:\Users\asus\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.1\junit-jupiter-engine-5.10.1.jar;C:\Users\asus\.m2\repository\org\junit\platform\junit-platform-engine\1.10.1\junit-platform-engine-1.10.1.jar;C:\Users\asus\.m2\repository\org\mockito\mockito-core\5.7.0\mockito-core-5.7.0.jar;C:\Users\asus\.m2\repository\net\bytebuddy\byte-buddy-agent\1.14.10\byte-buddy-agent-1.14.10.jar;C:\Users\asus\.m2\repository\org\objenesis\objenesis\3.3\objenesis-3.3.jar;C:\Users\asus\.m2\repository\org\mockito\mockito-junit-jupiter\5.7.0\mockito-junit-jupiter-5.7.0.jar;C:\Users\asus\.m2\repository\org\skyscreamer\jsonassert\1.5.1\jsonassert-1.5.1.jar;C:\Users\asus\.m2\repository\com\vaadin\external\google\android-json\0.0.20131108.vaadin1\android-json-0.0.20131108.vaadin1.jar;C:\Users\asus\.m2\repository\org\springframework\spring-core\6.1.1\spring-core-6.1.1.jar;C:\Users\asus\.m2\repository\org\springframework\spring-jcl\6.1.1\spring-jcl-6.1.1.jar;C:\Users\asus\.m2\repository\org\springframework\spring-test\6.1.1\spring-test-6.1.1.jar;C:\Users\asus\.m2\repository\org\xmlunit\xmlunit-core\2.9.1\xmlunit-core-2.9.1.jar;C:\Users\asus\.m2\repository\com\h2database\h2\2.2.224\h2-2.2.224.jar;C:\Users\asus\.m2\repository\org\springframework\security\spring-security-test\6.2.0\spring-security-test-6.2.0.jar;C:\Users\asus\.m2\repository\org\springframework\security\spring-security-core\6.2.0\spring-security-core-6.2.0.jar;C:\Users\asus\.m2\repository\org\springframework\security\spring-security-crypto\6.2.0\spring-security-crypto-6.2.0.jar;"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="user.timezone" value="Africa/Lagos"/>
+    <property name="org.jboss.logging.provider" value="slf4j"/>
+    <property name="os.name" value="Windows 11"/>
+    <property name="java.vm.specification.version" value="25"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="FR"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-25\bin"/>
+    <property name="sun.java.command" value="C:\Users\asus\AppData\Local\Temp\surefire10536178393191772466\surefirebooter-20260515142722935_3.jar C:\Users\asus\AppData\Local\Temp\surefire10536178393191772466 2026-05-15T14-27-22_541-jvmRun1 surefire-20260515142722935_1tmp surefire_0-20260515142722935_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="C:\Users\asus\Desktop\version_final_wahid\projet_wahid - Copie\projet_wahid - Copie\backend\target\test-classes;C:\Users\asus\Desktop\version_final_wahid\projet_wahid - Copie\projet_wahid - Copie\backend\target\classes;C:\Users\asus\.m2\repository\org\springframework\boot\spring-boot-starter-web\3.2.0\spring-boot-starter-web-3.2.0.jar;C:\Users\asus\.m2\repository\org\springframework\boot\spring-boot-starter\3.2.0\spring-boot-starter-3.2.0.jar;C:\Users\asus\.m2\repository\org\springframework\boot\spring-boot\3.2.0\spring-boot-3.2.0.jar;C:\Users\asus\.m2\repository\org\springframework\boot\spring-boot-autoconfigure\3.2.0\spring-boot-autoconfigure-3.2.0.jar;C:\Users\asus\.m2\repository\org\springframework\boot\spring-boot-starter-logging\3.2.0\spring-boot-starter-logging-3.2.0.jar;C:\Users\asus\.m2\repository\ch\qos\logback\logback-classic\1.4.11\logback-classic-1.4.11.jar;C:\Users\asus\.m2\repository\ch\qos\logback\logback-core\1.4.11\logback-core-1.4.11.jar;C:\Users\asus\.m2\repository\org\apache\logging\log4j\log4j-to-slf4j\2.21.1\log4j-to-slf4j-2.21.1.jar;C:\Users\asus\.m2\repository\org\apache\logging\log4j\log4j-api\2.21.1\log4j-api-2.21.1.jar;C:\Users\asus\.m2\repository\org\slf4j\jul-to-slf4j\2.0.9\jul-to-slf4j-2.0.9.jar;C:\Users\asus\.m2\repository\jakarta\annotation\jakarta.annotation-api\2.1.1\jakarta.annotation-api-2.1.1.jar;C:\Users\asus\.m2\repository\org\yaml\snakeyaml\2.2\snakeyaml-2.2.jar;C:\Users\asus\.m2\repository\org\springframework\boot\spring-boot-starter-json\3.2.0\spring-boot-starter-json-3.2.0.jar;C:\Users\asus\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jdk8\2.15.3\jackson-datatype-jdk8-2.15.3.jar;C:\Users\asus\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.15.3\jackson-datatype-jsr310-2.15.3.jar;C:\Users\asus\.m2\repository\com\fasterxml\jackson\module\jackson-module-parameter-names\2.15.3\jackson-module-parameter-names-2.15.3.jar;C:\Users\asus\.m2\repository\org\springframework\boot\spring-boot-starter-tomcat\3.2.0\spring-boot-starter-tomcat-3.2.0.jar;C:\Users\asus\.m2\repository\org\apache\tomcat\embed\tomcat-embed-core\10.1.16\tomcat-embed-core-10.1.16.jar;C:\Users\asus\.m2\repository\org\apache\tomcat\embed\tomcat-embed-websocket\10.1.16\tomcat-embed-websocket-10.1.16.jar;C:\Users\asus\.m2\repository\org\springframework\spring-web\6.1.1\spring-web-6.1.1.jar;C:\Users\asus\.m2\repository\org\springframework\spring-beans\6.1.1\spring-beans-6.1.1.jar;C:\Users\asus\.m2\repository\io\micrometer\micrometer-observation\1.12.0\micrometer-observation-1.12.0.jar;C:\Users\asus\.m2\repository\io\micrometer\micrometer-commons\1.12.0\micrometer-commons-1.12.0.jar;C:\Users\asus\.m2\repository\org\springframework\spring-webmvc\6.1.1\spring-webmvc-6.1.1.jar;C:\Users\asus\.m2\repository\org\springframework\spring-context\6.1.1\spring-context-6.1.1.jar;C:\Users\asus\.m2\repository\org\springframework\spring-expression\6.1.1\spring-expression-6.1.1.jar;C:\Users\asus\.m2\repository\org\springframework\boot\spring-boot-starter-data-jpa\3.2.0\spring-boot-starter-data-jpa-3.2.0.jar;C:\Users\asus\.m2\repository\org\springframework\boot\spring-boot-starter-aop\3.2.0\spring-boot-starter-aop-3.2.0.jar;C:\Users\asus\.m2\repository\org\aspectj\aspectjweaver\1.9.20.1\aspectjweaver-1.9.20.1.jar;C:\Users\asus\.m2\repository\org\springframework\boot\spring-boot-starter-jdbc\3.2.0\spring-boot-starter-jdbc-3.2.0.jar;C:\Users\asus\.m2\repository\com\zaxxer\HikariCP\5.0.1\HikariCP-5.0.1.jar;C:\Users\asus\.m2\repository\org\springframework\spring-jdbc\6.1.1\spring-jdbc-6.1.1.jar;C:\Users\asus\.m2\repository\org\hibernate\orm\hibernate-core\6.3.1.Final\hibernate-core-6.3.1.Final.jar;C:\Users\asus\.m2\repository\jakarta\persistence\jakarta.persistence-api\3.1.0\jakarta.persistence-api-3.1.0.jar;C:\Users\asus\.m2\repository\jakarta\transaction\jakarta.transaction-api\2.0.1\jakarta.transaction-api-2.0.1.jar;C:\Users\asus\.m2\repository\org\jboss\logging\jboss-logging\3.5.3.Final\jboss-logging-3.5.3.Final.jar;C:\Users\asus\.m2\repository\org\hibernate\common\hibernate-commons-annotations\6.0.6.Final\hibernate-commons-annotations-6.0.6.Final.jar;C:\Users\asus\.m2\repository\io\smallrye\jandex\3.1.2\jandex-3.1.2.jar;C:\Users\asus\.m2\repository\com\fasterxml\classmate\1.6.0\classmate-1.6.0.jar;C:\Users\asus\.m2\repository\net\bytebuddy\byte-buddy\1.14.10\byte-buddy-1.14.10.jar;C:\Users\asus\.m2\repository\org\glassfish\jaxb\jaxb-runtime\4.0.4\jaxb-runtime-4.0.4.jar;C:\Users\asus\.m2\repository\org\glassfish\jaxb\jaxb-core\4.0.4\jaxb-core-4.0.4.jar;C:\Users\asus\.m2\repository\org\eclipse\angus\angus-activation\2.0.1\angus-activation-2.0.1.jar;C:\Users\asus\.m2\repository\org\glassfish\jaxb\txw2\4.0.4\txw2-4.0.4.jar;C:\Users\asus\.m2\repository\com\sun\istack\istack-commons-runtime\4.1.2\istack-commons-runtime-4.1.2.jar;C:\Users\asus\.m2\repository\jakarta\inject\jakarta.inject-api\2.0.1\jakarta.inject-api-2.0.1.jar;C:\Users\asus\.m2\repository\org\antlr\antlr4-runtime\4.10.1\antlr4-runtime-4.10.1.jar;C:\Users\asus\.m2\repository\org\springframework\data\spring-data-jpa\3.2.0\spring-data-jpa-3.2.0.jar;C:\Users\asus\.m2\repository\org\springframework\data\spring-data-commons\3.2.0\spring-data-commons-3.2.0.jar;C:\Users\asus\.m2\repository\org\springframework\spring-orm\6.1.1\spring-orm-6.1.1.jar;C:\Users\asus\.m2\repository\org\springframework\spring-tx\6.1.1\spring-tx-6.1.1.jar;C:\Users\asus\.m2\repository\org\slf4j\slf4j-api\2.0.9\slf4j-api-2.0.9.jar;C:\Users\asus\.m2\repository\org\springframework\spring-aspects\6.1.1\spring-aspects-6.1.1.jar;C:\Users\asus\.m2\repository\org\springframework\boot\spring-boot-starter-validation\3.2.0\spring-boot-starter-validation-3.2.0.jar;C:\Users\asus\.m2\repository\org\apache\tomcat\embed\tomcat-embed-el\10.1.16\tomcat-embed-el-10.1.16.jar;C:\Users\asus\.m2\repository\org\hibernate\validator\hibernate-validator\8.0.1.Final\hibernate-validator-8.0.1.Final.jar;C:\Users\asus\.m2\repository\jakarta\validation\jakarta.validation-api\3.0.2\jakarta.validation-api-3.0.2.jar;C:\Users\asus\.m2\repository\org\springframework\boot\spring-boot-starter-security\3.2.0\spring-boot-starter-security-3.2.0.jar;C:\Users\asus\.m2\repository\org\springframework\spring-aop\6.1.1\spring-aop-6.1.1.jar;C:\Users\asus\.m2\repository\org\springframework\security\spring-security-config\6.2.0\spring-security-config-6.2.0.jar;C:\Users\asus\.m2\repository\org\springframework\security\spring-security-web\6.2.0\spring-security-web-6.2.0.jar;C:\Users\asus\.m2\repository\io\jsonwebtoken\jjwt-api\0.11.5\jjwt-api-0.11.5.jar;C:\Users\asus\.m2\repository\io\jsonwebtoken\jjwt-impl\0.11.5\jjwt-impl-0.11.5.jar;C:\Users\asus\.m2\repository\io\jsonwebtoken\jjwt-jackson\0.11.5\jjwt-jackson-0.11.5.jar;C:\Users\asus\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.15.3\jackson-databind-2.15.3.jar;C:\Users\asus\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.15.3\jackson-annotations-2.15.3.jar;C:\Users\asus\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.15.3\jackson-core-2.15.3.jar;C:\Users\asus\.m2\repository\org\postgresql\postgresql\42.6.0\postgresql-42.6.0.jar;C:\Users\asus\.m2\repository\org\checkerframework\checker-qual\3.31.0\checker-qual-3.31.0.jar;C:\Users\asus\.m2\repository\org\projectlombok\lombok\1.18.30\lombok-1.18.30.jar;C:\Users\asus\.m2\repository\org\springframework\boot\spring-boot-starter-test\3.2.0\spring-boot-starter-test-3.2.0.jar;C:\Users\asus\.m2\repository\org\springframework\boot\spring-boot-test\3.2.0\spring-boot-test-3.2.0.jar;C:\Users\asus\.m2\repository\org\springframework\boot\spring-boot-test-autoconfigure\3.2.0\spring-boot-test-autoconfigure-3.2.0.jar;C:\Users\asus\.m2\repository\com\jayway\jsonpath\json-path\2.8.0\json-path-2.8.0.jar;C:\Users\asus\.m2\repository\jakarta\xml\bind\jakarta.xml.bind-api\4.0.1\jakarta.xml.bind-api-4.0.1.jar;C:\Users\asus\.m2\repository\jakarta\activation\jakarta.activation-api\2.1.2\jakarta.activation-api-2.1.2.jar;C:\Users\asus\.m2\repository\net\minidev\json-smart\2.5.0\json-smart-2.5.0.jar;C:\Users\asus\.m2\repository\net\minidev\accessors-smart\2.5.0\accessors-smart-2.5.0.jar;C:\Users\asus\.m2\repository\org\ow2\asm\asm\9.3\asm-9.3.jar;C:\Users\asus\.m2\repository\org\assertj\assertj-core\3.24.2\assertj-core-3.24.2.jar;C:\Users\asus\.m2\repository\org\awaitility\awaitility\4.2.0\awaitility-4.2.0.jar;C:\Users\asus\.m2\repository\org\hamcrest\hamcrest\2.2\hamcrest-2.2.jar;C:\Users\asus\.m2\repository\org\junit\jupiter\junit-jupiter\5.10.1\junit-jupiter-5.10.1.jar;C:\Users\asus\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.1\junit-jupiter-api-5.10.1.jar;C:\Users\asus\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\asus\.m2\repository\org\junit\platform\junit-platform-commons\1.10.1\junit-platform-commons-1.10.1.jar;C:\Users\asus\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\asus\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.10.1\junit-jupiter-params-5.10.1.jar;C:\Users\asus\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.1\junit-jupiter-engine-5.10.1.jar;C:\Users\asus\.m2\repository\org\junit\platform\junit-platform-engine\1.10.1\junit-platform-engine-1.10.1.jar;C:\Users\asus\.m2\repository\org\mockito\mockito-core\5.7.0\mockito-core-5.7.0.jar;C:\Users\asus\.m2\repository\net\bytebuddy\byte-buddy-agent\1.14.10\byte-buddy-agent-1.14.10.jar;C:\Users\asus\.m2\repository\org\objenesis\objenesis\3.3\objenesis-3.3.jar;C:\Users\asus\.m2\repository\org\mockito\mockito-junit-jupiter\5.7.0\mockito-junit-jupiter-5.7.0.jar;C:\Users\asus\.m2\repository\org\skyscreamer\jsonassert\1.5.1\jsonassert-1.5.1.jar;C:\Users\asus\.m2\repository\com\vaadin\external\google\android-json\0.0.20131108.vaadin1\android-json-0.0.20131108.vaadin1.jar;C:\Users\asus\.m2\repository\org\springframework\spring-core\6.1.1\spring-core-6.1.1.jar;C:\Users\asus\.m2\repository\org\springframework\spring-jcl\6.1.1\spring-jcl-6.1.1.jar;C:\Users\asus\.m2\repository\org\springframework\spring-test\6.1.1\spring-test-6.1.1.jar;C:\Users\asus\.m2\repository\org\xmlunit\xmlunit-core\2.9.1\xmlunit-core-2.9.1.jar;C:\Users\asus\.m2\repository\com\h2database\h2\2.2.224\h2-2.2.224.jar;C:\Users\asus\.m2\repository\org\springframework\security\spring-security-test\6.2.0\spring-security-test-6.2.0.jar;C:\Users\asus\.m2\repository\org\springframework\security\spring-security-core\6.2.0\spring-security-core-6.2.0.jar;C:\Users\asus\.m2\repository\org\springframework\security\spring-security-crypto\6.2.0\spring-security-crypto-6.2.0.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\asus"/>
+    <property name="user.language" value="fr"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2025-09-16"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk-25"/>
+    <property name="file.separator" value="\"/>
+    <property name="basedir" value="C:\Users\asus\Desktop\version_final_wahid\projet_wahid - Copie\projet_wahid - Copie\backend"/>
+    <property name="java.vm.compressedOopsMode" value="32-bit"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="FILE_LOG_CHARSET" value="UTF-8"/>
+    <property name="java.awt.headless" value="true"/>
+    <property name="surefire.real.class.path" value="C:\Users\asus\AppData\Local\Temp\surefire10536178393191772466\surefirebooter-20260515142722935_3.jar"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="25+37-LTS-3491"/>
+    <property name="user.name" value="asus"/>
+    <property name="stdout.encoding" value="Cp1252"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="localRepository" value="C:\Users\asus\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="C:\Users\asus\AppData\Local\Temp\"/>
+    <property name="com.zaxxer.hikari.pool_number" value="1"/>
+    <property name="java.version" value="25"/>
+    <property name="user.dir" value="C:\Users\asus\Desktop\version_final_wahid\projet_wahid - Copie\projet_wahid - Copie\backend"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="PID" value="1596"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="CONSOLE_LOG_CHARSET" value="UTF-8"/>
+    <property name="native.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk-25\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\PowerShell\7;C:\oraclexe\app\oracle\product\11.2.0\server\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Java\jdk-25\bin;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Users\asus\php-8.2.30-nts-Win32-vs16-x64;C:\ProgramData\ComposerSetup\bin;C:\Program Files\PowerShell\7\;C:\Maven\apache-maven-3.9.14\bin;;C:\Program Files\Docker\Docker\resources\bin;C:\Users\asus\AppData\Local\Programs\Python\Launcher\;C:\Users\asus\AppData\Local\Microsoft\WindowsApps;C:\Users\asus\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\asus\AppData\Roaming\npm;C:\Users\asus\AppData\Roaming\Composer\vendor\bin;C:\Users\asus\AppData\Local\JetBrains\Toolbox\scripts;C:\Users\asus\AppData\Local\Programs\Antigravity\bin;c:\Users\asus\AppData\Roaming\Code\User\globalStorage\github.copilot-chat\debugCommand;."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="Cp1252"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="25+37-LTS-3491"/>
+    <property name="stdin.encoding" value="Cp1252"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="69.0"/>
+  </properties>
+  <testcase name="testCreateAccessoire" classname="com.phoneaccessoires.controller.AccessoireControllerTest" time="1.598">
+    <system-out><![CDATA[14:27:25.347 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.phoneaccessoires.controller.AccessoireControllerTest]: AccessoireControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+14:27:25.752 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.phoneaccessoires.PhoneAccessoiresApplication for test class com.phoneaccessoires.controller.AccessoireControllerTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.0)
+
+2026-05-15T14:27:26.945+01:00  INFO 1596 --- [           main] c.p.controller.AccessoireControllerTest  : Starting AccessoireControllerTest using Java 25 with PID 1596 (started by asus in C:\Users\asus\Desktop\version_final_wahid\projet_wahid - Copie\projet_wahid - Copie\backend)
+2026-05-15T14:27:26.947+01:00 DEBUG 1596 --- [           main] c.p.controller.AccessoireControllerTest  : Running with Spring Boot v3.2.0, Spring v6.1.1
+2026-05-15T14:27:26.949+01:00  INFO 1596 --- [           main] c.p.controller.AccessoireControllerTest  : The following 1 profile is active: "test"
+2026-05-15T14:27:28.808+01:00  INFO 1596 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-15T14:27:29.060+01:00  INFO 1596 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 231 ms. Found 7 JPA repository interfaces.
+2026-05-15T14:27:30.198+01:00  INFO 1596 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-05-15T14:27:30.394+01:00  INFO 1596 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.3.1.Final
+2026-05-15T14:27:30.503+01:00  INFO 1596 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-05-15T14:27:31.252+01:00  INFO 1596 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-15T14:27:31.324+01:00  INFO 1596 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-15T14:27:31.893+01:00  INFO 1596 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2026-05-15T14:27:31.898+01:00  INFO 1596 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-05-15T14:27:31.968+01:00  WARN 1596 --- [           main] org.hibernate.dialect.Dialect            : HHH000511: The 2.2.0 version for [org.hibernate.dialect.PostgreSQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 11.0.0. Check the community dialects project for available legacy versions.
+2026-05-15T14:27:31.984+01:00  WARN 1596 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-05-15T14:27:34.638+01:00  INFO 1596 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-15T14:27:34.683+01:00 DEBUG 1596 --- [           main] org.hibernate.SQL                        : 
+    alter table if exists accessoire_images 
+       drop constraint if exists FKg4t6cyx3g6jb0vy57lln2jf23
+Hibernate: 
+    alter table if exists accessoire_images 
+       drop constraint if exists FKg4t6cyx3g6jb0vy57lln2jf23
+2026-05-15T14:27:34.690+01:00 DEBUG 1596 --- [           main] org.hibernate.SQL                        : 
+    alter table if exists accessoires 
+       drop constraint if exists FKddx2w82rry8y4b11eg9r0iw34
+Hibernate: 
+    alter table if exists accessoires 
+       drop constraint if exists FKddx2w82rry8y4b11eg9r0iw34
+2026-05-15T14:27:34.691+01:00 DEBUG 1596 --- [           main] org.hibernate.SQL                        : 
+    alter table if exists accessoires 
+       drop constraint if exists FK5novncxcvfq0hxgt6sqdgyn7m
+Hibernate: 
+    alter table if exists accessoires 
+       drop constraint if exists FK5novncxcvfq0hxgt6sqdgyn7m
+2026-05-15T14:27:34.693+01:00 DEBUG 1596 --- [           main] org.hibernate.SQL                        : 
+    alter table if exists avis 
+       drop constraint if exists FKhpwv5f129rgrew71ovbk54ego
+Hibernate: 
+    alter table if exists avis 
+       drop constraint if exists FKhpwv5f129rgrew71ovbk54ego
+2026-05-15T14:27:34.694+01:00 DEBUG 1596 --- [           main] org.hibernate.SQL                        : 
+    alter table if exists ligne_commandes 
+       drop constraint if exists FK1x47waeaajbbbantp0hfwovii
+Hibernate: 
+    alter table if exists ligne_commandes 
+       drop constraint if exists FK1x47waeaajbbbantp0hfwovii
+2026-05-15T14:27:34.694+01:00 DEBUG 1596 --- [           main] org.hibernate.SQL                        : 
+    alter table if exists ligne_commandes 
+       drop constraint if exists FKrvg91xestg6qh7vh7c4iw8lca
+Hibernate: 
+    alter table if exists ligne_commandes 
+       drop constraint if exists FKrvg91xestg6qh7vh7c4iw8lca
+2026-05-15T14:27:34.696+01:00 DEBUG 1596 --- [           main] org.hibernate.SQL                        : 
+    drop table if exists accessoire_images cascade
+Hibernate: 
+    drop table if exists accessoire_images cascade
+2026-05-15T14:27:34.698+01:00 DEBUG 1596 --- [           main] org.hibernate.SQL                        : 
+    drop table if exists accessoires cascade
+Hibernate: 
+    drop table if exists accessoires cascade
+2026-05-15T14:27:34.699+01:00 DEBUG 1596 --- [           main] org.hibernate.SQL                        : 
+    drop table if exists avis cascade
+Hibernate: 
+    drop table if exists avis cascade
+2026-05-15T14:27:34.700+01:00 DEBUG 1596 --- [           main] org.hibernate.SQL                        : 
+    drop table if exists categories cascade
+Hibernate: 
+    drop table if exists categories cascade
+2026-05-15T14:27:34.701+01:00 DEBUG 1596 --- [           main] org.hibernate.SQL                        : 
+    drop table if exists commandes cascade
+Hibernate: 
+    drop table if exists commandes cascade
+2026-05-15T14:27:34.701+01:00 DEBUG 1596 --- [           main] org.hibernate.SQL                        : 
+    drop table if exists ligne_commandes cascade
+Hibernate: 
+    drop table if exists ligne_commandes cascade
+2026-05-15T14:27:34.702+01:00 DEBUG 1596 --- [           main] org.hibernate.SQL                        : 
+    drop table if exists marques cascade
+Hibernate: 
+    drop table if exists marques cascade
+2026-05-15T14:27:34.702+01:00 DEBUG 1596 --- [           main] org.hibernate.SQL                        : 
+    drop table if exists utilisateurs cascade
+Hibernate: 
+    drop table if exists utilisateurs cascade
+2026-05-15T14:27:34.717+01:00 DEBUG 1596 --- [           main] org.hibernate.SQL                        : 
+    create table accessoire_images (
+        accessoire_id bigint not null,
+        created_at timestamp(6),
+        id bigserial not null,
+        image_url varchar(500) not null,
+        primary key (id)
+    )
+Hibernate: 
+    create table accessoire_images (
+        accessoire_id bigint not null,
+        created_at timestamp(6),
+        id bigserial not null,
+        image_url varchar(500) not null,
+        primary key (id)
+    )
+2026-05-15T14:27:34.742+01:00 DEBUG 1596 --- [           main] org.hibernate.SQL                        : 
+    create table accessoires (
+        en_promotion boolean,
+        prix numeric(10,2) not null,
+        prix_ancien numeric(10,2),
+        stock INTEGER DEFAULT 0,
+        categorie_id bigint,
+        created_at timestamp(6),
+        id bigserial not null,
+        marque_id bigint,
+        updated_at timestamp(6),
+        garantie varchar(50),
+        reference varchar(100) unique,
+        nom varchar(200) not null,
+        image_url varchar(500),
+        caracteristiques TEXT,
+        description TEXT,
+        primary key (id)
+    )
+Hibernate: 
+    create table accessoires (
+        en_promotion boolean,
+        prix numeric(10,2) not null,
+        prix_ancien numeric(10,2),
+        stock INTEGER DEFAULT 0,
+        categorie_id bigint,
+        created_at timestamp(6),
+        id bigserial not null,
+        marque_id bigint,
+        updated_at timestamp(6),
+        garantie varchar(50),
+        reference varchar(100) unique,
+        nom varchar(200) not null,
+        image_url varchar(500),
+        caracteristiques TEXT,
+        description TEXT,
+        primary key (id)
+    )
+2026-05-15T14:27:34.750+01:00 DEBUG 1596 --- [           main] org.hibernate.SQL                        : 
+    create table avis (
+        note integer not null,
+        accessoire_id bigint not null,
+        created_at timestamp(6),
+        id bigserial not null,
+        commentaire TEXT,
+        nom_utilisateur varchar(255) not null,
+        primary key (id)
+    )
+Hibernate: 
+    create table avis (
+        note integer not null,
+        accessoire_id bigint not null,
+        created_at timestamp(6),
+        id bigserial not null,
+        commentaire TEXT,
+        nom_utilisateur varchar(255) not null,
+        primary key (id)
+    )
+2026-05-15T14:27:34.754+01:00 DEBUG 1596 --- [           main] org.hibernate.SQL                        : 
+    create table categories (
+        created_at timestamp(6),
+        id bigserial not null,
+        nom varchar(100) not null,
+        description TEXT,
+        primary key (id)
+    )
+Hibernate: 
+    create table categories (
+        created_at timestamp(6),
+        id bigserial not null,
+        nom varchar(100) not null,
+        description TEXT,
+        primary key (id)
+    )
+2026-05-15T14:27:34.757+01:00 DEBUG 1596 --- [           main] org.hibernate.SQL                        : 
+    create table commandes (
+        total numeric(10,2) not null,
+        created_at timestamp(6),
+        id bigserial not null,
+        adresse TEXT not null,
+        method_paiement varchar(255) not null,
+        nom varchar(255) not null,
+        prenom varchar(255) not null,
+        telephone varchar(255) not null,
+        ville varchar(255) not null,
+        primary key (id)
+    )
+Hibernate: 
+    create table commandes (
+        total numeric(10,2) not null,
+        created_at timestamp(6),
+        id bigserial not null,
+        adresse TEXT not null,
+        method_paiement varchar(255) not null,
+        nom varchar(255) not null,
+        prenom varchar(255) not null,
+        telephone varchar(255) not null,
+        ville varchar(255) not null,
+        primary key (id)
+    )
+2026-05-15T14:27:34.760+01:00 DEBUG 1596 --- [           main] org.hibernate.SQL                        : 
+    create table ligne_commandes (
+        prix_unitaire numeric(10,2) not null,
+        quantite integer not null,
+        accessoire_id bigint not null,
+        commande_id bigint not null,
+        id bigserial not null,
+        primary key (id)
+    )
+Hibernate: 
+    create table ligne_commandes (
+        prix_unitaire numeric(10,2) not null,
+        quantite integer not null,
+        accessoire_id bigint not null,
+        commande_id bigint not null,
+        id bigserial not null,
+        primary key (id)
+    )
+2026-05-15T14:27:34.763+01:00 DEBUG 1596 --- [           main] org.hibernate.SQL                        : 
+    create table marques (
+        created_at timestamp(6),
+        id bigserial not null,
+        nom varchar(100) not null,
+        pays_origine varchar(100),
+        logo_url varchar(255),
+        primary key (id)
+    )
+Hibernate: 
+    create table marques (
+        created_at timestamp(6),
+        id bigserial not null,
+        nom varchar(100) not null,
+        pays_origine varchar(100),
+        logo_url varchar(255),
+        primary key (id)
+    )
+2026-05-15T14:27:34.766+01:00 DEBUG 1596 --- [           main] org.hibernate.SQL                        : 
+    create table utilisateurs (
+        id bigserial not null,
+        email varchar(255) not null unique,
+        nom varchar(255),
+        password varchar(255) not null,
+        prenom varchar(255),
+        role varchar(255) not null check (role in ('CLIENT','ADMIN')),
+        primary key (id)
+    )
+Hibernate: 
+    create table utilisateurs (
+        id bigserial not null,
+        email varchar(255) not null unique,
+        nom varchar(255),
+        password varchar(255) not null,
+        prenom varchar(255),
+        role varchar(255) not null check (role in ('CLIENT','ADMIN')),
+        primary key (id)
+    )
+2026-05-15T14:27:34.777+01:00 DEBUG 1596 --- [           main] org.hibernate.SQL                        : 
+    alter table if exists accessoire_images 
+       add constraint FKg4t6cyx3g6jb0vy57lln2jf23 
+       foreign key (accessoire_id) 
+       references accessoires
+Hibernate: 
+    alter table if exists accessoire_images 
+       add constraint FKg4t6cyx3g6jb0vy57lln2jf23 
+       foreign key (accessoire_id) 
+       references accessoires
+2026-05-15T14:27:34.803+01:00 DEBUG 1596 --- [           main] org.hibernate.SQL                        : 
+    alter table if exists accessoires 
+       add constraint FKddx2w82rry8y4b11eg9r0iw34 
+       foreign key (categorie_id) 
+       references categories
+Hibernate: 
+    alter table if exists accessoires 
+       add constraint FKddx2w82rry8y4b11eg9r0iw34 
+       foreign key (categorie_id) 
+       references categories
+2026-05-15T14:27:34.806+01:00 DEBUG 1596 --- [           main] org.hibernate.SQL                        : 
+    alter table if exists accessoires 
+       add constraint FK5novncxcvfq0hxgt6sqdgyn7m 
+       foreign key (marque_id) 
+       references marques
+Hibernate: 
+    alter table if exists accessoires 
+       add constraint FK5novncxcvfq0hxgt6sqdgyn7m 
+       foreign key (marque_id) 
+       references marques
+2026-05-15T14:27:34.810+01:00 DEBUG 1596 --- [           main] org.hibernate.SQL                        : 
+    alter table if exists avis 
+       add constraint FKhpwv5f129rgrew71ovbk54ego 
+       foreign key (accessoire_id) 
+       references accessoires
+Hibernate: 
+    alter table if exists avis 
+       add constraint FKhpwv5f129rgrew71ovbk54ego 
+       foreign key (accessoire_id) 
+       references accessoires
+2026-05-15T14:27:34.814+01:00 DEBUG 1596 --- [           main] org.hibernate.SQL                        : 
+    alter table if exists ligne_commandes 
+       add constraint FK1x47waeaajbbbantp0hfwovii 
+       foreign key (accessoire_id) 
+       references accessoires
+Hibernate: 
+    alter table if exists ligne_commandes 
+       add constraint FK1x47waeaajbbbantp0hfwovii 
+       foreign key (accessoire_id) 
+       references accessoires
+2026-05-15T14:27:34.823+01:00 DEBUG 1596 --- [           main] org.hibernate.SQL                        : 
+    alter table if exists ligne_commandes 
+       add constraint FKrvg91xestg6qh7vh7c4iw8lca 
+       foreign key (commande_id) 
+       references commandes
+Hibernate: 
+    alter table if exists ligne_commandes 
+       add constraint FKrvg91xestg6qh7vh7c4iw8lca 
+       foreign key (commande_id) 
+       references commandes
+2026-05-15T14:27:34.837+01:00  INFO 1596 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-15T14:27:35.952+01:00  INFO 1596 --- [           main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-05-15T14:27:38.061+01:00  WARN 1596 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-15T14:27:38.752+01:00  INFO 1596 --- [           main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@13a590f3, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4243ed1b, org.springframework.security.web.context.SecurityContextHolderFilter@6fa741b5, org.springframework.security.web.header.HeaderWriterFilter@693d797e, org.springframework.web.filter.CorsFilter@29932728, org.springframework.security.web.authentication.logout.LogoutFilter@13d63185, com.phoneaccessoires.security.JwtAuthenticationFilter@265bea14, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6c5abd8f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2f940a24, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1fa81c78, org.springframework.security.web.session.SessionManagementFilter@28c4cce2, org.springframework.security.web.access.ExceptionTranslationFilter@7f7d5133, org.springframework.security.web.access.intercept.AuthorizationFilter@5e71e8d4]
+2026-05-15T14:27:39.418+01:00 DEBUG 1596 --- [           main] c.p.security.JwtAuthenticationFilter     : Filter 'jwtAuthenticationFilter' configured for use
+2026-05-15T14:27:39.420+01:00  INFO 1596 --- [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-05-15T14:27:39.421+01:00  INFO 1596 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-05-15T14:27:39.424+01:00  INFO 1596 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 3 ms
+2026-05-15T14:27:39.462+01:00  INFO 1596 --- [           main] c.p.controller.AccessoireControllerTest  : Started AccessoireControllerTest in 13.256 seconds (process running for 16.267)
+2026-05-15T14:27:39.642+01:00 DEBUG 1596 --- [           main] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.nom,
+        u1_0.password,
+        u1_0.prenom,
+        u1_0.role 
+    from
+        utilisateurs u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.nom,
+        u1_0.password,
+        u1_0.prenom,
+        u1_0.role 
+    from
+        utilisateurs u1_0 
+    where
+        u1_0.email=?
+2026-05-15T14:27:39.918+01:00 DEBUG 1596 --- [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        utilisateurs
+        (email, nom, password, prenom, role) 
+    values
+        (?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        utilisateurs
+        (email, nom, password, prenom, role) 
+    values
+        (?, ?, ?, ?, ?)
+2026-05-15T14:27:39.936+01:00  INFO 1596 --- [           main] c.p.config.DataInitializer               : Utilisateur administrateur créé : admin@techstore.tn / admin123
+2026-05-15T14:27:39.961+01:00 DEBUG 1596 --- [           main] org.hibernate.SQL                        : 
+    select
+        count(*) 
+    from
+        categories c1_0
+Hibernate: 
+    select
+        count(*) 
+    from
+        categories c1_0
+2026-05-15T14:27:39.966+01:00  INFO 1596 --- [           main] c.p.config.DataInitializer               : Initialisation de la base de données avec les données de test...
+2026-05-15T14:27:39.976+01:00 DEBUG 1596 --- [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        categories
+        (created_at, description, nom) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        categories
+        (created_at, description, nom) 
+    values
+        (?, ?, ?)
+2026-05-15T14:27:39.983+01:00 DEBUG 1596 --- [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        categories
+        (created_at, description, nom) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        categories
+        (created_at, description, nom) 
+    values
+        (?, ?, ?)
+2026-05-15T14:27:39.985+01:00 DEBUG 1596 --- [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        categories
+        (created_at, description, nom) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        categories
+        (created_at, description, nom) 
+    values
+        (?, ?, ?)
+2026-05-15T14:27:39.987+01:00 DEBUG 1596 --- [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        categories
+        (created_at, description, nom) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        categories
+        (created_at, description, nom) 
+    values
+        (?, ?, ?)
+2026-05-15T14:27:39.989+01:00 DEBUG 1596 --- [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        categories
+        (created_at, description, nom) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        categories
+        (created_at, description, nom) 
+    values
+        (?, ?, ?)
+2026-05-15T14:27:39.990+01:00  INFO 1596 --- [           main] c.p.config.DataInitializer               : 5 catégories créées avec succès.
+2026-05-15T14:27:39.996+01:00 DEBUG 1596 --- [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        marques
+        (created_at, logo_url, nom, pays_origine) 
+    values
+        (?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        marques
+        (created_at, logo_url, nom, pays_origine) 
+    values
+        (?, ?, ?, ?)
+2026-05-15T14:27:39.998+01:00 DEBUG 1596 --- [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        marques
+        (created_at, logo_url, nom, pays_origine) 
+    values
+        (?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        marques
+        (created_at, logo_url, nom, pays_origine) 
+    values
+        (?, ?, ?, ?)
+2026-05-15T14:27:40.000+01:00 DEBUG 1596 --- [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        marques
+        (created_at, logo_url, nom, pays_origine) 
+    values
+        (?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        marques
+        (created_at, logo_url, nom, pays_origine) 
+    values
+        (?, ?, ?, ?)
+2026-05-15T14:27:40.002+01:00 DEBUG 1596 --- [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        marques
+        (created_at, logo_url, nom, pays_origine) 
+    values
+        (?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        marques
+        (created_at, logo_url, nom, pays_origine) 
+    values
+        (?, ?, ?, ?)
+2026-05-15T14:27:40.005+01:00 DEBUG 1596 --- [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        marques
+        (created_at, logo_url, nom, pays_origine) 
+    values
+        (?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        marques
+        (created_at, logo_url, nom, pays_origine) 
+    values
+        (?, ?, ?, ?)
+2026-05-15T14:27:40.006+01:00  INFO 1596 --- [           main] c.p.config.DataInitializer               : 5 marques créées avec succès.
+2026-05-15T14:27:40.029+01:00 DEBUG 1596 --- [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        accessoires
+        (caracteristiques, categorie_id, created_at, description, en_promotion, garantie, image_url, marque_id, nom, prix, prix_ancien, reference, stock, updated_at) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        accessoires
+        (caracteristiques, categorie_id, created_at, description, en_promotion, garantie, image_url, marque_id, nom, prix, prix_ancien, reference, stock, updated_at) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2026-05-15T14:27:40.036+01:00 DEBUG 1596 --- [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        accessoires
+        (caracteristiques, categorie_id, created_at, description, en_promotion, garantie, image_url, marque_id, nom, prix, prix_ancien, reference, stock, updated_at) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        accessoires
+        (caracteristiques, categorie_id, created_at, description, en_promotion, garantie, image_url, marque_id, nom, prix, prix_ancien, reference, stock, updated_at) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2026-05-15T14:27:40.038+01:00 DEBUG 1596 --- [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        accessoires
+        (caracteristiques, categorie_id, created_at, description, en_promotion, garantie, image_url, marque_id, nom, prix, prix_ancien, reference, stock, updated_at) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        accessoires
+        (caracteristiques, categorie_id, created_at, description, en_promotion, garantie, image_url, marque_id, nom, prix, prix_ancien, reference, stock, updated_at) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2026-05-15T14:27:40.041+01:00 DEBUG 1596 --- [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        accessoires
+        (caracteristiques, categorie_id, created_at, description, en_promotion, garantie, image_url, marque_id, nom, prix, prix_ancien, reference, stock, updated_at) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        accessoires
+        (caracteristiques, categorie_id, created_at, description, en_promotion, garantie, image_url, marque_id, nom, prix, prix_ancien, reference, stock, updated_at) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2026-05-15T14:27:40.043+01:00 DEBUG 1596 --- [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        accessoires
+        (caracteristiques, categorie_id, created_at, description, en_promotion, garantie, image_url, marque_id, nom, prix, prix_ancien, reference, stock, updated_at) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        accessoires
+        (caracteristiques, categorie_id, created_at, description, en_promotion, garantie, image_url, marque_id, nom, prix, prix_ancien, reference, stock, updated_at) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2026-05-15T14:27:40.045+01:00 DEBUG 1596 --- [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        accessoires
+        (caracteristiques, categorie_id, created_at, description, en_promotion, garantie, image_url, marque_id, nom, prix, prix_ancien, reference, stock, updated_at) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        accessoires
+        (caracteristiques, categorie_id, created_at, description, en_promotion, garantie, image_url, marque_id, nom, prix, prix_ancien, reference, stock, updated_at) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2026-05-15T14:27:40.048+01:00 DEBUG 1596 --- [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        accessoires
+        (caracteristiques, categorie_id, created_at, description, en_promotion, garantie, image_url, marque_id, nom, prix, prix_ancien, reference, stock, updated_at) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        accessoires
+        (caracteristiques, categorie_id, created_at, description, en_promotion, garantie, image_url, marque_id, nom, prix, prix_ancien, reference, stock, updated_at) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2026-05-15T14:27:40.050+01:00 DEBUG 1596 --- [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        accessoires
+        (caracteristiques, categorie_id, created_at, description, en_promotion, garantie, image_url, marque_id, nom, prix, prix_ancien, reference, stock, updated_at) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        accessoires
+        (caracteristiques, categorie_id, created_at, description, en_promotion, garantie, image_url, marque_id, nom, prix, prix_ancien, reference, stock, updated_at) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2026-05-15T14:27:40.054+01:00 DEBUG 1596 --- [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        accessoires
+        (caracteristiques, categorie_id, created_at, description, en_promotion, garantie, image_url, marque_id, nom, prix, prix_ancien, reference, stock, updated_at) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        accessoires
+        (caracteristiques, categorie_id, created_at, description, en_promotion, garantie, image_url, marque_id, nom, prix, prix_ancien, reference, stock, updated_at) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2026-05-15T14:27:40.057+01:00 DEBUG 1596 --- [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        accessoires
+        (caracteristiques, categorie_id, created_at, description, en_promotion, garantie, image_url, marque_id, nom, prix, prix_ancien, reference, stock, updated_at) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        accessoires
+        (caracteristiques, categorie_id, created_at, description, en_promotion, garantie, image_url, marque_id, nom, prix, prix_ancien, reference, stock, updated_at) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2026-05-15T14:27:40.060+01:00  INFO 1596 --- [           main] c.p.config.DataInitializer               : 10 accessoires créés avec succès.
+2026-05-15T14:27:40.061+01:00  INFO 1596 --- [           main] c.p.config.DataInitializer               : === Initialisation de la base de données terminée ===
+2026-05-15T14:27:40.160+01:00 DEBUG 1596 --- [           main] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.nom,
+        u1_0.password,
+        u1_0.prenom,
+        u1_0.role 
+    from
+        utilisateurs u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.nom,
+        u1_0.password,
+        u1_0.prenom,
+        u1_0.role 
+    from
+        utilisateurs u1_0 
+    where
+        u1_0.email=?
+2026-05-15T14:27:40.269+01:00 DEBUG 1596 --- [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        utilisateurs
+        (email, nom, password, prenom, role) 
+    values
+        (?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        utilisateurs
+        (email, nom, password, prenom, role) 
+    values
+        (?, ?, ?, ?, ?)
+2026-05-15T14:27:41.456+01:00 DEBUG 1596 --- [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        accessoires
+        (caracteristiques, categorie_id, created_at, description, en_promotion, garantie, image_url, marque_id, nom, prix, prix_ancien, reference, stock, updated_at) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        accessoires
+        (caracteristiques, categorie_id, created_at, description, en_promotion, garantie, image_url, marque_id, nom, prix, prix_ancien, reference, stock, updated_at) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+]]></system-out>
+    <system-err><![CDATA[WARNING: A Java agent has been loaded dynamically (C:\Users\asus\.m2\repository\net\bytebuddy\byte-buddy-agent\1.14.10\byte-buddy-agent-1.14.10.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+]]></system-err>
+  </testcase>
+  <testcase name="testGetAllAccessoires" classname="com.phoneaccessoires.controller.AccessoireControllerTest" time="0.196">
+    <system-out><![CDATA[2026-05-15T14:27:41.939+01:00 DEBUG 1596 --- [           main] org.hibernate.SQL                        : 
+    select
+        a1_0.id,
+        a1_0.caracteristiques,
+        a1_0.categorie_id,
+        a1_0.created_at,
+        a1_0.description,
+        a1_0.en_promotion,
+        a1_0.garantie,
+        a1_0.image_url,
+        a1_0.marque_id,
+        a1_0.nom,
+        a1_0.prix,
+        a1_0.prix_ancien,
+        a1_0.reference,
+        a1_0.stock,
+        a1_0.updated_at 
+    from
+        accessoires a1_0 
+    offset
+        ? rows 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        a1_0.id,
+        a1_0.caracteristiques,
+        a1_0.categorie_id,
+        a1_0.created_at,
+        a1_0.description,
+        a1_0.en_promotion,
+        a1_0.garantie,
+        a1_0.image_url,
+        a1_0.marque_id,
+        a1_0.nom,
+        a1_0.prix,
+        a1_0.prix_ancien,
+        a1_0.reference,
+        a1_0.stock,
+        a1_0.updated_at 
+    from
+        accessoires a1_0 
+    offset
+        ? rows 
+    fetch
+        first ? rows only
+2026-05-15T14:27:41.988+01:00 DEBUG 1596 --- [           main] org.hibernate.SQL                        : 
+    select
+        count(a1_0.id) 
+    from
+        accessoires a1_0
+Hibernate: 
+    select
+        count(a1_0.id) 
+    from
+        accessoires a1_0
+2026-05-15T14:27:42.003+01:00 DEBUG 1596 --- [           main] org.hibernate.SQL                        : 
+    select
+        i1_0.accessoire_id,
+        i1_0.id,
+        i1_0.created_at,
+        i1_0.image_url 
+    from
+        accessoire_images i1_0 
+    where
+        i1_0.accessoire_id=?
+Hibernate: 
+    select
+        i1_0.accessoire_id,
+        i1_0.id,
+        i1_0.created_at,
+        i1_0.image_url 
+    from
+        accessoire_images i1_0 
+    where
+        i1_0.accessoire_id=?
+2026-05-15T14:27:42.011+01:00 DEBUG 1596 --- [           main] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.created_at,
+        c1_0.description,
+        c1_0.nom 
+    from
+        categories c1_0 
+    where
+        c1_0.id=?
+Hibernate: 
+    select
+        c1_0.id,
+        c1_0.created_at,
+        c1_0.description,
+        c1_0.nom 
+    from
+        categories c1_0 
+    where
+        c1_0.id=?
+2026-05-15T14:27:42.015+01:00 DEBUG 1596 --- [           main] org.hibernate.SQL                        : 
+    select
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.logo_url,
+        m1_0.nom,
+        m1_0.pays_origine 
+    from
+        marques m1_0 
+    where
+        m1_0.id=?
+Hibernate: 
+    select
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.logo_url,
+        m1_0.nom,
+        m1_0.pays_origine 
+    from
+        marques m1_0 
+    where
+        m1_0.id=?
+2026-05-15T14:27:42.018+01:00 DEBUG 1596 --- [           main] org.hibernate.SQL                        : 
+    select
+        i1_0.accessoire_id,
+        i1_0.id,
+        i1_0.created_at,
+        i1_0.image_url 
+    from
+        accessoire_images i1_0 
+    where
+        i1_0.accessoire_id=?
+Hibernate: 
+    select
+        i1_0.accessoire_id,
+        i1_0.id,
+        i1_0.created_at,
+        i1_0.image_url 
+    from
+        accessoire_images i1_0 
+    where
+        i1_0.accessoire_id=?
+2026-05-15T14:27:42.019+01:00 DEBUG 1596 --- [           main] org.hibernate.SQL                        : 
+    select
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.logo_url,
+        m1_0.nom,
+        m1_0.pays_origine 
+    from
+        marques m1_0 
+    where
+        m1_0.id=?
+Hibernate: 
+    select
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.logo_url,
+        m1_0.nom,
+        m1_0.pays_origine 
+    from
+        marques m1_0 
+    where
+        m1_0.id=?
+2026-05-15T14:27:42.020+01:00 DEBUG 1596 --- [           main] org.hibernate.SQL                        : 
+    select
+        i1_0.accessoire_id,
+        i1_0.id,
+        i1_0.created_at,
+        i1_0.image_url 
+    from
+        accessoire_images i1_0 
+    where
+        i1_0.accessoire_id=?
+Hibernate: 
+    select
+        i1_0.accessoire_id,
+        i1_0.id,
+        i1_0.created_at,
+        i1_0.image_url 
+    from
+        accessoire_images i1_0 
+    where
+        i1_0.accessoire_id=?
+2026-05-15T14:27:42.022+01:00 DEBUG 1596 --- [           main] org.hibernate.SQL                        : 
+    select
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.logo_url,
+        m1_0.nom,
+        m1_0.pays_origine 
+    from
+        marques m1_0 
+    where
+        m1_0.id=?
+Hibernate: 
+    select
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.logo_url,
+        m1_0.nom,
+        m1_0.pays_origine 
+    from
+        marques m1_0 
+    where
+        m1_0.id=?
+2026-05-15T14:27:42.023+01:00 DEBUG 1596 --- [           main] org.hibernate.SQL                        : 
+    select
+        i1_0.accessoire_id,
+        i1_0.id,
+        i1_0.created_at,
+        i1_0.image_url 
+    from
+        accessoire_images i1_0 
+    where
+        i1_0.accessoire_id=?
+Hibernate: 
+    select
+        i1_0.accessoire_id,
+        i1_0.id,
+        i1_0.created_at,
+        i1_0.image_url 
+    from
+        accessoire_images i1_0 
+    where
+        i1_0.accessoire_id=?
+2026-05-15T14:27:42.024+01:00 DEBUG 1596 --- [           main] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.created_at,
+        c1_0.description,
+        c1_0.nom 
+    from
+        categories c1_0 
+    where
+        c1_0.id=?
+Hibernate: 
+    select
+        c1_0.id,
+        c1_0.created_at,
+        c1_0.description,
+        c1_0.nom 
+    from
+        categories c1_0 
+    where
+        c1_0.id=?
+2026-05-15T14:27:42.026+01:00 DEBUG 1596 --- [           main] org.hibernate.SQL                        : 
+    select
+        i1_0.accessoire_id,
+        i1_0.id,
+        i1_0.created_at,
+        i1_0.image_url 
+    from
+        accessoire_images i1_0 
+    where
+        i1_0.accessoire_id=?
+Hibernate: 
+    select
+        i1_0.accessoire_id,
+        i1_0.id,
+        i1_0.created_at,
+        i1_0.image_url 
+    from
+        accessoire_images i1_0 
+    where
+        i1_0.accessoire_id=?
+2026-05-15T14:27:42.027+01:00 DEBUG 1596 --- [           main] org.hibernate.SQL                        : 
+    select
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.logo_url,
+        m1_0.nom,
+        m1_0.pays_origine 
+    from
+        marques m1_0 
+    where
+        m1_0.id=?
+Hibernate: 
+    select
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.logo_url,
+        m1_0.nom,
+        m1_0.pays_origine 
+    from
+        marques m1_0 
+    where
+        m1_0.id=?
+2026-05-15T14:27:42.029+01:00 DEBUG 1596 --- [           main] org.hibernate.SQL                        : 
+    select
+        i1_0.accessoire_id,
+        i1_0.id,
+        i1_0.created_at,
+        i1_0.image_url 
+    from
+        accessoire_images i1_0 
+    where
+        i1_0.accessoire_id=?
+Hibernate: 
+    select
+        i1_0.accessoire_id,
+        i1_0.id,
+        i1_0.created_at,
+        i1_0.image_url 
+    from
+        accessoire_images i1_0 
+    where
+        i1_0.accessoire_id=?
+2026-05-15T14:27:42.030+01:00 DEBUG 1596 --- [           main] org.hibernate.SQL                        : 
+    select
+        i1_0.accessoire_id,
+        i1_0.id,
+        i1_0.created_at,
+        i1_0.image_url 
+    from
+        accessoire_images i1_0 
+    where
+        i1_0.accessoire_id=?
+Hibernate: 
+    select
+        i1_0.accessoire_id,
+        i1_0.id,
+        i1_0.created_at,
+        i1_0.image_url 
+    from
+        accessoire_images i1_0 
+    where
+        i1_0.accessoire_id=?
+2026-05-15T14:27:42.031+01:00 DEBUG 1596 --- [           main] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.created_at,
+        c1_0.description,
+        c1_0.nom 
+    from
+        categories c1_0 
+    where
+        c1_0.id=?
+Hibernate: 
+    select
+        c1_0.id,
+        c1_0.created_at,
+        c1_0.description,
+        c1_0.nom 
+    from
+        categories c1_0 
+    where
+        c1_0.id=?
+2026-05-15T14:27:42.032+01:00 DEBUG 1596 --- [           main] org.hibernate.SQL                        : 
+    select
+        i1_0.accessoire_id,
+        i1_0.id,
+        i1_0.created_at,
+        i1_0.image_url 
+    from
+        accessoire_images i1_0 
+    where
+        i1_0.accessoire_id=?
+Hibernate: 
+    select
+        i1_0.accessoire_id,
+        i1_0.id,
+        i1_0.created_at,
+        i1_0.image_url 
+    from
+        accessoire_images i1_0 
+    where
+        i1_0.accessoire_id=?
+2026-05-15T14:27:42.034+01:00 DEBUG 1596 --- [           main] org.hibernate.SQL                        : 
+    select
+        i1_0.accessoire_id,
+        i1_0.id,
+        i1_0.created_at,
+        i1_0.image_url 
+    from
+        accessoire_images i1_0 
+    where
+        i1_0.accessoire_id=?
+Hibernate: 
+    select
+        i1_0.accessoire_id,
+        i1_0.id,
+        i1_0.created_at,
+        i1_0.image_url 
+    from
+        accessoire_images i1_0 
+    where
+        i1_0.accessoire_id=?
+2026-05-15T14:27:42.035+01:00 DEBUG 1596 --- [           main] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.created_at,
+        c1_0.description,
+        c1_0.nom 
+    from
+        categories c1_0 
+    where
+        c1_0.id=?
+Hibernate: 
+    select
+        c1_0.id,
+        c1_0.created_at,
+        c1_0.description,
+        c1_0.nom 
+    from
+        categories c1_0 
+    where
+        c1_0.id=?
+2026-05-15T14:27:42.036+01:00 DEBUG 1596 --- [           main] org.hibernate.SQL                        : 
+    select
+        i1_0.accessoire_id,
+        i1_0.id,
+        i1_0.created_at,
+        i1_0.image_url 
+    from
+        accessoire_images i1_0 
+    where
+        i1_0.accessoire_id=?
+Hibernate: 
+    select
+        i1_0.accessoire_id,
+        i1_0.id,
+        i1_0.created_at,
+        i1_0.image_url 
+    from
+        accessoire_images i1_0 
+    where
+        i1_0.accessoire_id=?
+2026-05-15T14:27:42.037+01:00 DEBUG 1596 --- [           main] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.created_at,
+        c1_0.description,
+        c1_0.nom 
+    from
+        categories c1_0 
+    where
+        c1_0.id=?
+Hibernate: 
+    select
+        c1_0.id,
+        c1_0.created_at,
+        c1_0.description,
+        c1_0.nom 
+    from
+        categories c1_0 
+    where
+        c1_0.id=?
+]]></system-out>
+  </testcase>
+</testsuite>

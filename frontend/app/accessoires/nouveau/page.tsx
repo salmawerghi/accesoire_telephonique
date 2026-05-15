@@ -5,15 +5,42 @@ import { useRouter } from 'next/navigation';
 import { accessoireService, AccessoireDTO } from '@/lib/api/accessoireService';
 import { categorieService, Categorie } from '@/lib/api/categorieService';
 import { marqueService, Marque } from '@/lib/api/marqueService';
-import { Save, ArrowLeft } from 'lucide-react';
+import { Save, ArrowLeft, Sparkles, Loader2 } from 'lucide-react';
 import Link from 'next/link';
+import { aiService } from '@/lib/api/aiService';
 
 export default function NouveaAccessoirePage() {
   const router = useRouter();
-  const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm<AccessoireDTO>();
+  const { register, handleSubmit, setValue, watch, formState: { errors, isSubmitting } } = useForm<AccessoireDTO>();
 
   const [categories, setCategories] = useState<Categorie[]>([]);
   const [marques, setMarques] = useState<Marque[]>([]);
+  const [isGenerating, setIsGenerating] = useState(false);
+
+  // Observer les champs pour l'IA
+  const watchedNom = watch("nom");
+  const watchedMarqueId = watch("marqueId");
+  const watchedCategorieId = watch("categorieId");
+
+  const generateWithAI = async () => {
+    if (!watchedNom) {
+      alert("Veuillez d'abord saisir le nom de l'article.");
+      return;
+    }
+
+    try {
+      setIsGenerating(true);
+      const marque = marques.find(m => m.id === Number(watchedMarqueId))?.nom || "";
+      const categorie = categories.find(c => c.id === Number(watchedCategorieId))?.nom || "";
+      
+      const description = await aiService.generateDescription(watchedNom, marque, categorie);
+      setValue("description", description as string);
+    } catch (e) {
+      alert("Erreur lors de la génération de la description.");
+    } finally {
+      setIsGenerating(false);
+    }
+  };
 
   useEffect(() => {
     const fetchSelects = async () => {
@@ -88,10 +115,21 @@ export default function NouveaAccessoirePage() {
           </div>
 
           <div className="space-y-2">
-            <label className="text-sm font-medium leading-none">Description</label>
+            <div className="flex items-center justify-between">
+              <label className="text-sm font-medium leading-none">Description</label>
+              <button 
+                type="button"
+                onClick={generateWithAI}
+                disabled={isGenerating || !watchedNom}
+                className="inline-flex items-center gap-1.5 text-xs font-bold text-primary hover:bg-primary/10 px-2 py-1 rounded-md transition-all disabled:opacity-50"
+              >
+                {isGenerating ? <Loader2 className="h-3 w-3 animate-spin" /> : <Sparkles className="h-3 w-3" />}
+                Générer avec l'IA
+              </button>
+            </div>
             <textarea
               {...register("description")}
-              className="flex min-h-[80px] w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-sm focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+              className="flex min-h-[100px] w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-sm focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
               placeholder="Description de l'article..."
             />
           </div>
