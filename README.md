@@ -75,5 +75,5 @@ Ce script va automatiquement compiler le backend, le lancer sur le port `8080`, 
 `backend/src/main/resources/application.properties` :
 - `spring.datasource.url=jdbc:postgresql://localhost:5432/phone_accessories_db`
 - `spring.datasource.username=postgres`
-- `spring.datasource.password=salmaouerghi123`
+- `spring.datasource.password=VOTRE_MOT_DE_PASSE`
 - `server.port=8082`
